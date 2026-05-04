@@ -14,8 +14,7 @@ function clock1(){
   const strMinutes = minutes < 10 ? '0' + minutes : minutes;
   const strSeconds = seconds < 10 ? '0' + seconds : seconds;
   
-  document.getElementById('clock1').innerText = '${strHours}:${strMinutes}:${strSeconds}';
-  
+  document.getElementById('clock1').innerHTML = `${strHours}:${strMinutes}:${strSeconds}`;   
 }
 
 setInterval(clock1, 1000);
