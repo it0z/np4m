@@ -4,17 +4,14 @@ function testExtF(){
 
 function clock1(){
   
-  const now = new Date();
+const now = new Date();
   
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
-
-  const strHours = hours < 10 ? '0' + hours : hours;
-  const strMinutes = minutes < 10 ? '0' + minutes : minutes;
-  const strSeconds = seconds < 10 ? '0' + seconds : seconds;
+const h = now.getHours();
+const m = now.getMinutes();
+const s = now.getSeconds();
   
-  document.getElementById('clock1').innerHTML = `${strHours}:${strMinutes}:${strSeconds}`;   
+document.getElementById('clock1').innerHTML = h + ":" + m + ":" + s;
+  
 }
 
 setInterval(clock1, 1000);
