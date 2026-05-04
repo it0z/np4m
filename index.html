@@ -84,10 +84,21 @@ a.navlinks:hover{
 .divShrinkWrap{
 	display: inline-block;
 	border: 1px dotted white;
+	position: relative; /* parent to nameBanner class */
 }
 .divShrinkWrap img{
 	display: block;
 }
+
+.nameBanner{
+	position: absolute; 
+	bottom: 0;
+	left: 0;
+	height: 20px;
+	width: 100%;
+	color: white;
+}
+
 </style>
 
 <link rel="stylesheet" type="text/css" href="style.css">	
@@ -112,6 +123,7 @@ a.navlinks:hover{
 
 <div class="divShrinkWrap">	
 	<a href="https://pets.neopets.com/cpn/Ardeillia/1/7.png"><img src="https://pets.neopets.com/cpn/Ardeillia/1/4.png" title="Ardeillia"></a>
+	<div class="nameBanner">test</div>
 </div>
 
 <div class="divShrinkWrap">	
