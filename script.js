@@ -17,3 +17,6 @@ function clock1(){
   document.getElementById('clock1').innerText = '${strHours}:${strMinutes}:${strSeconds}';
   
 }
+
+setInterval(clock1, 1000);
+clock1();
