@@ -4,14 +4,24 @@ function testExtF(){
 
 function clock1(){
   
-const now = new Date();
-
-const h = String(now.getHours()).padStart(2,"0");
-const m = String(now.getMinutes()).padStart(2,"0");
-const s = String(now.getSeconds()).padStart(2,"0");
+  const now = new Date();
   
-document.getElementById('clock1').innerHTML = h + ":" + m + ":" + s;
+  let h = now.getHours();
+  const m = now.getMinutes();
+  const s = now.getSeconds();
   
+  // Convert to 12-hour format
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12;
+  h = h ? h : 12; // Handle midnight (0) as 12
+  
+  // Add leading zeros
+  const formattedH = h < 10 ? '0' + h : h;
+  const formattedM = m < 10 ? '0' + m : m;
+  const formattedS = s < 10 ? '0' + s : s;
+  
+  // Update the display
+  document.getElementById('clock1').innerHTML = formattedH + ":" + formattedM + ":" + formattedS + " " + ampm;
 }
 
 setInterval(clock1, 1000);
