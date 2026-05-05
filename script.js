@@ -1,5 +1,5 @@
 function testExtF(){
-  document.title = "ext js test.";
+  document.title = "Our Pets 🐦";
 }
 
 function clock1(){
