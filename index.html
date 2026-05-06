@@ -8,52 +8,7 @@
 <!-- font stuff end -->		
 
 <style>
-.dancing-script-<uniquifier> {
-	font-family: "Dancing Script", cursive;
-	font-optical-sizing: auto;
-	font-weight: <weight>;
-	font-style: normal;
-}
-body{
-	margin: 0 auto;
-	background-color: black;
-	color: white;
-	font-family: "Dancing Script", cursive;
-}
-h1{
-	font-size: 80px;
-}
 
-#topBanner{
-	position: fixed; 
-	top: 0;
-	left: 0;
-	height: 30px;
-	width: 100%;
-	padding: 5px;
-	border-bottom: 1px solid white;
-	background-color: black;
-	text-align: center;
-	z-index: 5;
-	opacity: 0.7;
-}
-a{
-	text-decoration: none;
-	color: white;
-	font-size: 20px;
-	/* margin: 5px;
-	padding: 5px; */
-	vertical-align: middle;
-	text-align: center;
-}
-a:hover{
-	/*opacity: 0.75;*/
-}
-body{
-   background-image: url(https://64.media.tumblr.com/06807ff010acf77991fb59e6888da60b/d7bfbdfdedf8c0f2-96/s1280x1920/f608e4c48f0783e0c446ea6e9fed563565f4d077.gif);
-   background-attachment: fixed;
-   background-size: 175px 175px;
-}
 img{
 	border: 5px solid #333;
 	border-radius: 20px;
@@ -63,44 +18,30 @@ img:hover{
 	/* border: 5px solid #FFF; */
 	opacity: 0.75;
 }
-a.navlinks:hover{
-	opacity: 0.75;
-}
-#clock1{
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 100px;
-	/* height: 30px; */
-	z-index:6;
-	text-align: center;
-	/* font-size: 20px; */
-	margin: 5px;
-	padding: 5px;
-}
+
 .divShrinkWrap{
 	display: inline-block;
 	/* border: 1px dotted white; */
 	position: relative; /* parent to nameBanner class */
-	margin: 10px;
+	margin: 20px;
+	margin-bottom: 30px;
 	background-color: #333;
 	border-radius: 20px;
+	
 }
 .divShrinkWrap img{
 	display: block;
 }
 .nameBanner{
 	position: absolute; 
-	bottom: 0;
+	top: -35px;
 	left: 0;
 	height: 30px;
 	width: 100%;
-	color: white;
+	color: #FFF;
 	font-weight: bold;
-	font-size: 40px;
-	text-shadow: 2px 2px 5px red;
-	/* background: #333;
-	opacity: 0.75; */
+	font-size: 30px;
+	text-shadow: 2px 2px 5px #FFF;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	display: flex;
@@ -125,6 +66,9 @@ a.navlinks:hover{
 	background: #333;
 	opacity: 0.75;
 }
+.customizeBtn a:hover{
+	text-shadow: 1px 1px 5px #FFF;
+}
 
 </style>
 
@@ -139,7 +83,8 @@ a.navlinks:hover{
 	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/402320/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Neopet PBs 🖌️</a>
 	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/498429/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Petpet PBs 🖌️</a>	
 	<a class="navlinks" href="https://impress-2020.openneo.net/" target="_blank" title="Opens Dress to Impress in a new tab ⤴">DTI 👗</a>
-	<a class="navlinks" href="testpage.html" title="#">Quick Links 🔗</a>
+	<a class="navlinks" href="testpage.html" title="#">Misc.🔗</a>
+	
 </div>
 
 <div id="clock1">clock space</div>
@@ -147,6 +92,7 @@ a.navlinks:hover{
 <center>
 <br><br>
 <h1>lilkeeree’s pets</h1>
+<br>
 
 <div class="divShrinkWrap">	
 	<a href="https://pets.neopets.com/cpn/Ardeillia/1/7.png"><img src="https://pets.neopets.com/cpn/Ardeillia/1/4.png" title="Ardeillia"></a>
@@ -268,6 +214,7 @@ a.navlinks:hover{
 <!-- My Pets -------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <h1>modoru’s pets</h1>
+<br>
 
 <div class="divShrinkWrap">	
 	<a href="https://pets.neopets.com/cpn/abyssik/1/7.png"><img src="https://pets.neopets.com/cpn/abyssik/1/4.png" title="Abyssik"></a>
@@ -454,10 +401,15 @@ a.navlinks:hover{
 
 </center>
 <br>
-	<script src="script.js" defer></script>
-</body>
-<div id="tester">external css test</div>
+	
 
+<script src="script.js" defer></script>
+
+
+</body>
+
+
+<div id="tester">external css test</div>
 
 
 
