@@ -11,15 +11,27 @@
 <body onload="testExtF()">
 
 <div id="topBanner">
-	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/402315/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Codestones 🪨</a>
-	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/404181/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Nerkmids ⭐</a>
-	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/402320/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Paint Brushes 🖌️</a>
-	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/498429/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Petpet PBs 🖌️</a>	
-	<a class="navlinks" href="https://impress-2020.openneo.net/" target="_blank" title="Opens Dress to Impress in a new tab ⤴">DTI 👗</a>
-	<a class="navlinks" href="resources.html" title="#">Coding 💻</a>
-	<a class="navlinks" href="index.html" title="#">Home 🏠</a>
+	<div class="dropdown" onclick="dropdownF('dd1')">
+		JellyNeo Links
+		<div id="dd1" class="dropdown-content">
+			<a href="https://items.jellyneo.net/mywishes/modojn/402315/" target="_blank">Codestones🪨</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/404181/" target="_blank">Nerkmids⭐</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/402320/" target="_blank">Neopet PBs🎨</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/498429/" target="_blank">Petpet PBs🎨</a>
+  		</div>
+	</div>
+
+
+	<div class="dropdown" onclick="dropdownF('dd2')">
+		Other Links
+		<div id="dd2" class="dropdown-content">
+			<a href="https://impress-2020.openneo.net/" target="_blank" title="Opens Dress to Impress in a new tab ⤴">DTI👗</a>
+			<a href="resources.html" title="#">Resources💻</a>
+  		</div>
+	</div>
 </div>	
 	
+<div id="siteLogo"><a href="index.html">Our Pets 🐦</a></div>
 <div id="clock1">clock space</div>
 
 <center>
@@ -43,5 +55,3 @@
 <script src="script.js" defer></script>
 
 </body>
-
-<div id="tester"></div>
