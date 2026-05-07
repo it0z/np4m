@@ -1,5 +1,6 @@
 <head>
 
+
 <!-- font stuff start -->	
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,15 +9,7 @@
 
 <style>
 
-img{
-	border: 5px solid #333;
-	border-radius: 20px;
-	/* margin-bottom: 14px; */
-}
-img:hover{
-	/* border: 5px solid #FFF; */
-	opacity: 0.75;
-}
+
 
 .divShrinkWrap{
 	display: inline-block;
@@ -25,11 +18,24 @@ img:hover{
 	margin: 20px;
 	margin-bottom: 30px;
 	background-color: #333;
-	border-radius: 20px;
-	
+	padding: 1px;
+	border-radius: 15px;
+	/* box-shadow: 0 0 10px black inset; */
 }
 .divShrinkWrap img{
 	display: block;
+}
+.divShrinkWrap img{
+	border: 5px solid #333;
+	border-radius: 35px;
+	/* margin-bottom: 14px;
+	background-image: radial-gradient(transparent 50%, black);
+	*/
+	opacity: 0.80;
+}
+.divShrinkWrap img:hover{
+	/* border: 5px solid #FFF; */
+	opacity: 1;
 }
 .nameBanner{
 	position: absolute; 
@@ -77,14 +83,45 @@ img:hover{
 <body onload="testExtF()">
 
 <div id="topBanner">
+	<!--
 	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/402315/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Codestones 🪨</a>
 	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/404181/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Nerkmids ⭐</a>
 	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/402320/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Neopet PBs 🖌️</a>
 	<a class="navlinks" href="https://items.jellyneo.net/mywishes/modojn/498429/" target="_blank" title="Opens JellyNeo in a new tab ⤴">Petpet PBs 🖌️</a>	
-	<a class="navlinks" href="https://impress-2020.openneo.net/" target="_blank" title="Opens Dress to Impress in a new tab ⤴">DTI 👗</a>
-	<a class="navlinks" href="testpage.html" title="#">Misc.🔗</a>
+	-->
+
+	<div class="dropdown" onclick="dropdownF('dd1')">
+		JellyNeo Links
+		<div id="dd1" class="dropdown-content">
+			<a href="https://items.jellyneo.net/mywishes/modojn/402315/" target="_blank">Codestones🪨</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/404181/" target="_blank">Nerkmids⭐</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/402320/" target="_blank">Neopet PBs🎨</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/498429/" target="_blank">Petpet PBs🎨</a>
+  		</div>
+	</div>
+
+
+	<div class="dropdown" onclick="dropdownF('dd2')">
+		Other Links
+		<div id="dd2" class="dropdown-content">
+			<a href="https://impress-2020.openneo.net/" target="_blank" title="Opens Dress to Impress in a new tab ⤴">DTI👗</a>
+			<a href="testpage.html" title="#">Other Pages🔗</a>
+
+  		</div>
+	</div>
+
+<!--
+	<div class="dropdown navlinks">
+			<a href="#" title="#">Blank</a>
+	</div>
+	<div class="dropdown navlinks">
+		<a href="#" title="#">Blank</a>
+	</div>
+-->
 	
 </div>
+
+<div id="siteLogo"><a href="index.html">Our Pets 🐦</a></div>
 
 <div id="clock1">clock space</div>
 	
@@ -97,8 +134,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Ardeillia/1/7.png"><img src="https://pets.neopets.com/cpn/Ardeillia/1/4.png" title="Ardeillia"></a>
 	<div class="nameBanner">Ardeillia</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Ardeillia" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Ardeillia" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Ardeillia" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Ardeillia" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -106,8 +144,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Bakkunawa/1/7.png"><img src="https://pets.neopets.com/cpn/Bakkunawa/1/4.png" title="Bakkunawa"></a>
 	<div class="nameBanner">Bakkunawa</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Bakkunawa" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Bakkunawa" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Bakkunawa" target="_blank" title="View Lookup on Neopets">🔎</a>
+        <a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Bakkunawa" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 	
@@ -115,8 +154,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/kambeign/1/7.png"><img src="https://pets.neopets.com/cpn/kambeign/1/4.png" title="kambeign"></a>
 	<div class="nameBanner">Kambeign</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=kambeign" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=kambeign" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=kambeign" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=kambeign" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -124,8 +164,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Kiwikiti/1/7.png"><img src="https://pets.neopets.com/cpn/Kiwikiti/1/4.png" title="Kiwikiti"></a>
 	<div class="nameBanner">Kiwikiti</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Kiwikiti" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Kiwikiti" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Kiwikiti" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Kiwikiti" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -133,8 +174,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Lassooo/1/7.png"><img src="https://pets.neopets.com/cpn/Lassooo/1/4.png" title="Lassooo"></a>
 	<div class="nameBanner">Lassooo</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Lassooo" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Lassooo" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Lassooo" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Lassooo" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -142,8 +184,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Leichara/1/7.png"><img src="https://pets.neopets.com/cpn/Leichara/1/4.png" title="Leichara"></a>
 	<div class="nameBanner">Leichara</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Leichara" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Leichara" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Leichara" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Leichara" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -151,8 +194,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Lilkeeree/1/7.png"><img src="https://pets.neopets.com/cpn/Lilkeeree/1/4.png" title="Lilkeeree"></a>
 	<div class="nameBanner">Lilkeeree</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=lilkeeree" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=lilkeeree" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=lilkeeree" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=lilkeeree" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -160,8 +204,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Mei_Tsaa/2/7.png"><img src="https://pets.neopets.com/cpn/Mei_Tsaa/2/4.png" title="Mei_Tsaa"></a>
 	<div class="nameBanner">Mei_Tsaa</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Mei_Tsaa" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Mei_Tsaa" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Mei_Tsaa" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Mei_Tsaa" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -169,8 +214,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Pshyanna/1/7.png"><img src="https://pets.neopets.com/cpn/Pshyanna/1/4.png" title="Pshyanna"></a>
 	<div class="nameBanner">Pshyanna</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Pshyanna" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Pshyanna" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Pshyanna" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Pshyanna" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -178,8 +224,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Raikujo/1/7.png"><img src="https://pets.neopets.com/cpn/Raikujo/1/4.png" title="Raikujo"></a>
 	<div class="nameBanner">Raikujo</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Raikujo" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Raikujo" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Raikujo" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Raikujo" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -187,8 +234,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Rerro_Ferro/2/7.png"><img src="https://pets.neopets.com/cpn/Rerro_Ferro/2/4.png" title="Rerro_Ferro"></a>
 	<div class="nameBanner">Rerro_Ferro</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Rerro_Ferro" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Rerro_Ferro" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Rerro_Ferro" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Rerro_Ferro" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -196,8 +244,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Santaye/1/7.png"><img src="https://pets.neopets.com/cpn/Santaye/1/4.png" title="Santaye"></a>
 	<div class="nameBanner">Santaye</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Santaye" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Santaye" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Santaye" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Santaye" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -205,8 +254,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Vandiniii/2/7.png"><img src="https://pets.neopets.com/cpn/Vandiniii/2/4.png" title="Vandiniii"></a>
 	<div class="nameBanner">Vandiniii</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Vandiniii" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Vandiniii" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Vandiniii" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Vandiniii" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -219,8 +269,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/abyssik/1/7.png"><img src="https://pets.neopets.com/cpn/abyssik/1/4.png" title="Abyssik"></a>
 	<div class="nameBanner">Abyssik</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=abyssik" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=abyssik" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=abyssik" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=abyssik" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 
 </div>
@@ -229,8 +280,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/akibonn/1/7.png"><img src="https://pets.neopets.com/cpn/akibonn/1/4.png" title="Akibonn"></a>
 	<div class="nameBanner">Akibonn</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=akibonn" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=akibonn" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=akibonn" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=akibonn" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -238,8 +290,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Birinci/1/7.png"><img src="https://pets.neopets.com/cpn/Birinci/1/4.png" title="Birinci"></a>
 	<div class="nameBanner">Birinci</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=birinci" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=birinci" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=birinci" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=birinci" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -247,8 +300,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Caerbanogi/1/7.png"><img src="https://pets.neopets.com/cpn/Caerbanogi/1/4.png" title="Caerbanogi"></a>
 	<div class="nameBanner">Caerbanogi</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Caerbanogi" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Caerbanogi" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Caerbanogi" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Caerbanogi" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -256,8 +310,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Erikor/1/7.png"><img src="https://pets.neopets.com/cpn/Erikor/1/4.png" title="Erikor"></a>
 	<div class="nameBanner">Erikor</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Erikor" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Erikor" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Erikor" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Erikor" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -265,8 +320,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Fissionfang/1/7.png"><img src="https://pets.neopets.com/cpn/Fissionfang/1/4.png" title="Fissionfang"></a>
 	<div class="nameBanner">Fissionfang</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Fissionfang" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Fissionfang" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Fissionfang" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Fissionfang" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -274,8 +330,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Hellaqwent/1/7.png"><img src="https://pets.neopets.com/cpn/Hellaqwent/1/4.png" title="Hellaqwent"></a>
 	<div class="nameBanner">Hellaqwent</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=hellaqwent" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=hellaqwent" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=hellaqwent" target="_blank" title="View Lookup on Neopets">🔎</a>	
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=hellaqwent" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -283,8 +340,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Hitogamii/1/7.png"><img src="https://pets.neopets.com/cpn/Hitogamii/1/4.png" title="Hitogamii"></a>
 	<div class="nameBanner">Hitogamii</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Hitogamii" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Hitogamii" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Hitogamii" target="_blank" title="View Lookup on Neopets">🔎</a>	
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Hitogamii" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -292,8 +350,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Izklaidet/1/7.png"><img src="https://pets.neopets.com/cpn/Izklaidet/1/4.png" title="Izklaidet"></a>
 	<div class="nameBanner">Izklaidet</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=izklaidet" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=izklaidet" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=izklaidet" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=izklaidet" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -301,8 +360,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Kenquru/1/7.png"><img src="https://pets.neopets.com/cpn/Kenquru/1/4.png" title="Kenquru"></a>
 	<div class="nameBanner">Kenquru</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=kenquru" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=kenquru" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=kenquru" target="_blank" title="View Lookup on Neopets">🔎</a>	
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=kenquru" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -310,8 +370,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Kuikorosaur/1/7.png"><img src="https://pets.neopets.com/cpn/Kuikorosaur/1/4.png" title="Kuikorosaur"></a>
 	<div class="nameBanner">Kuikorosaur</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Kuikorosaur" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Kuikorosaur" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Kuikorosaur" target="_blank" title="View Lookup on Neopets">🔎</a>	
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Kuikorosaur" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -319,8 +380,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Obocodo/1/7.png"><img src="https://pets.neopets.com/cpn/Obocodo/1/4.png" title="Obocodo"></a>
 	<div class="nameBanner">Obocodo</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=obocodo" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=obocodo" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=obocodo" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=obocodo" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -328,8 +390,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Quayahroh/1/7.png"><img src="https://pets.neopets.com/cpn/Quayahroh/1/4.png" title="Quayahroh"></a>
 	<div class="nameBanner">Quayahroh</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=quayahroh" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=quayahroh" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=quayahroh" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=quayahroh" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -337,8 +400,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Stalfoh/1/7.png"><img src="https://pets.neopets.com/cpn/Stalfoh/1/4.png" title="Stalfoh"></a>
 	<div class="nameBanner">Stalfoh</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Stalfoh" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Stalfoh" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Stalfoh" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Stalfoh" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -346,8 +410,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/takoyakae/1/7.png"><img src="https://pets.neopets.com/cpn/Takoyakae/1/4.png" title="Takoyakae"></a>
 	<div class="nameBanner">Takoyakae</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=takoyakae" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=takoyakae" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=takoyakae" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=takoyakae" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -355,8 +420,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Uwushi/1/7.png"><img src="https://pets.neopets.com/cpn/Uwushi/1/4.png" title="Uwushi"></a>
 	<div class="nameBanner">Uwushi</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=uwushi" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=uwushi" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=uwushi" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=uwushi" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -364,8 +430,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Wrathorin/1/7.png"><img src="https://pets.neopets.com/cpn/Wrathorin/1/4.png" title="Wrathorin"></a>
 	<div class="nameBanner">Wrathorin</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Wrathorin" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Wrathorin" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Wrathorin" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Wrathorin" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -373,8 +440,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/zenidos/1/7.png"><img src="https://pets.neopets.com/cpn/zenidos/1/4.png" title="Zenidos"></a>
 	<div class="nameBanner">Zenidos</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=zenidos" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=zenidos" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=zenidos" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=zenidos" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -382,8 +450,9 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/zimgorigaz/1/7.png"><img src="https://pets.neopets.com/cpn/zimgorigaz/1/4.png" title="Zimgorigaz"></a>
 	<div class="nameBanner">Zimgorigaz</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=zimgorigaz" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=zimgorigaz" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=zimgorigaz" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=zimgorigaz" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
@@ -391,16 +460,19 @@ img:hover{
 	<a href="https://pets.neopets.com/cpn/Zotomxi/1/7.png"><img src="https://pets.neopets.com/cpn/Zotomxi/1/4.png" title="Zotomxi"></a>
 	<div class="nameBanner">Zotomxi</div>
 	<div class="customizeBtn">
-		<a href="https://www.neopets.com/customise/?view=Zotomxi" target="_blank" title="Customize on Neopets">👕</a>
+		<a href="https://www.neopets.com/customise/?view=Zotomxi" target="_blank" title="Customize on Neopets">👗</a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Zotomxi" target="_blank" title="View Lookup on Neopets">🔎</a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Zotomxi" target="_blank" title="View Petpet on Neopets">🐦</a>
 	</div>
 </div>
 
+	
+
 </center>
 <br>
+	
 
 <script src="script.js" defer></script>
 
-</body>
 
-<div id="tester">external css test</div>
+</body>
