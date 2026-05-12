@@ -58,7 +58,19 @@ a{
 	z-index:6;
 	text-align: center;
 	/* font-size: 20px; */
-	font-size: 28px;
+	font-size: 30px;
+
+	line-height: 40px;
+	vertical-align: middle;
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#siteLogo img{
+	height: 32px;
 }
 
 #tester{
@@ -71,23 +83,6 @@ a{
 	font-family: verdana;
 	border: 1px dotted white;
 }
-
-/*
-
-#angelCamDisp{
-	position: fixed; 
-	bottom: 10px;
-	right: 10px;
-	height: 500px;
-	width: 600px;
-}
-iframe{
-	height: 100%;
-	width: 100%;
-	border-radius: 20px;
-}
-*/
-
 .linkContainer{
 	background: #333;
 	width: 80%;
@@ -141,7 +136,7 @@ iframe{
 	/* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
 	z-index: 1;
 	/* box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 1), 0 6px 20px 0 rgba(255, 255, 255, 0.1); */
-	border: 1px solid white;
+	border: 1px solid #333;
 	background-color: black;
 }
 
@@ -152,7 +147,7 @@ iframe{
 	padding: 10px;
 	text-decoration: none;
 	display: block;
-	border: 1px solid white;
+	border: 1px solid #333;
 	line-height: 20px; 
 }
 .dropdown:hover{
