@@ -34,6 +34,7 @@ function dropdownF(x) {
   document.getElementById("dd1").classList.remove("show");
   document.getElementById("dd2").classList.remove("show");
   document.getElementById("dd3").classList.remove("show");
+  document.getElementById("dd4").classList.remove("show");
   document.getElementById(x).classList.toggle("show");
 }
 
