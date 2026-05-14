@@ -13,6 +13,16 @@ body{
 	background-attachment: fixed;
 	background-size: 124px 124px;
 }
+
+
+select, button{
+	font-family: "Dancing Script", cursive;
+	font-size: 20px;
+	text-align: center;
+	margin: 5px;
+}
+
+
 h1{
 	font-size: 80px;
 	text-shadow: 1px 1px 9px white;
@@ -85,8 +95,8 @@ a{
 }
 .linkContainer{
 	background: #333;
-	width: 80%;
-	height: 100%;
+	width: 70%;
+	height: 200%;
 	border: 10px solid #000;
 	
 	font-size: 30px;
@@ -151,7 +161,7 @@ a{
 	line-height: 20px; 
 }
 .dropdown:hover{
-	cursor: pointer;
+	/*cursor: pointer;*/
 }
 .dropdown a:hover {
 	opacity: 0.5;
