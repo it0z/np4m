@@ -1,0 +1,150 @@
+<head>
+<!-- font stuff start -->	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<!-- font stuff end -->	
+<link rel="stylesheet" type="text/css" href="style.css">	
+
+<!-- Cool Pink Pointer Glitter - https://www.cursors-4u.com/cursor/cool-pink-pointer-glitter -->
+<link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/cool-pink-pointer-glitter-3488f1ab-32.css">
+<!-- End www.Cursors-4U.com Code -->
+</head>
+<body onload="testExtF()">
+<div id="topBanner">
+	<div class="dropdown" onclick="dropdownF('dd1')">
+		JellyNeo Links
+		<div id="dd1" class="dropdown-content">
+			<a href="https://www.jellyneo.net/?go=the_void_within&id=essence_collection" target="_blank">Void Essence</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/402315/" target="_blank">Codestones</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/404181/" target="_blank">Nerkmids</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/402320/" target="_blank">Neopet PBs</a>
+			<a href="https://items.jellyneo.net/mywishes/modojn/498429/" target="_blank">Petpet PBs</a>
+  		</div>
+	</div>
+	<div class="dropdown" onclick="dropdownF('dd2')">
+		Other Links
+		<div id="dd2" class="dropdown-content">
+			<a href="https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1" target="_blank">Mama Angel</a>
+			<a href="https://impress-2020.openneo.net/" target="_blank" title="Opens Dress to Impress in a new tab ⤴">Dress to Impress</a>
+			<a href="testpage.html" title="#">Other Pages</a>
+			<a href="resources.html" title="#">Resources</a>
+			<a href="bd.html" title="#">BD Corner</a>
+			<a href="stones.html" title="#">Codestone Tool</a>
+  		</div>
+	</div>
+	<div class="dropdown" onclick="dropdownF('dd3')">
+		Neopets Dailies
+		<div id="dd3" class="dropdown-content">
+			<a href="https://www.neopets.com/halloween/haunted_woods_hunt.phtml" target="_blank">Haunted Woods Hunt</a>
+			<a href="https://www.neopets.com/trudys_surprise.phtml" target="_blank">Trudy's Surprise</a>
+			<a href="https://www.neopets.com/premium/wheel.phtml" target="_blank">The Wheel of Starlight!</a>
+			<a href="https://www.neopets.com/medieval/earthfaerie.phtml" target="_blank">Illusen's Glade</a>		
+			<a href="https://www.neopets.com/faerieland/employ/employment.phtml" target="_blank">Faerieland Employment Agency</a>		
+			<a href="https://www.neopets.com/games/lottery.phtml" target="_blank">Neopian Lottery</a>             
+  		</div>
+	</div>
+    <div class="dropdown" onclick="dropdownF('dd4')">
+		Testing Area
+		<div id="dd4" class="dropdown-content">
+			<a href="db.html" target="_blank">Leave a Comment</a>          
+  		</div>
+	</div>
+</div>
+<div id="siteLogo"><a href="index.html">Our Pets </a><img src="redBird.png"></div>
+<div id="clock1">clock space</div>
+<center>
+<div class="linkContainer">
+<br><br>
+	<h1>Leave a Comment</h1>
+
+   
+
+
+Comment Type:
+<select id="field1">
+    <option value="General:">General</option>
+    <option value="Suggestion:">Suggestion</option>
+    <option value="Question:">Question</option>
+    <option value="New:">New</option>
+</select>
+<br>
+<textarea id="field2" style="width: 500px; height: 40px;" maxlength="70"></textarea>
+<br>
+<button id="addBtn">Submit</button>
+<div id="msg" style="color:darkred"></div>
+<hr>
+  <span id="list">Loading…</span>
+
+
+
+</div>
+</center>
+<script src="script.js" defer></script>
+</body>
+
+<script type="module">
+
+    // 
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+    const SUPA_URL = 'https://sjoejgimzoptridvexsx.supabase.co'
+    const SUPA_KEY = 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz'
+    const TABLE = 'test'                                    
+    const supabase = createClient(SUPA_URL, SUPA_KEY)
+
+// ---------------------------------------------------------------------------------------------------------------------------------
+
+  // elements
+  const listEl = document.getElementById('list')
+  const input1 = document.getElementById('field1')
+  const input2 = document.getElementById('field2')
+  const btn = document.getElementById('addBtn')
+  const msg = document.getElementById('msg')
+
+    // read table function 
+    async function load() {
+      const res = document.getElementById('list')
+      try {
+        const { data, error } = await supabase.from(TABLE).select('text_field_1, tf2, justDate').order('id', { ascending: false })
+        if (error) throw error
+        res.innerHTML = (data || []).map(r => `<span>
+            <span>${escapeHtml(String(r.text_field_1 ?? ''))}</span>
+            <span>${escapeHtml(String(r.tf2 ?? ''))}</span>
+            <span><sup>${escapeHtml(String(r.justDate ?? ''))}</sup></span><br>
+        </span>`).join('') || '<li>(no rows)</li>'
+      } catch (e) {
+        res.textContent = 'Error: ' + (e.message || e)
+        console.error(e)
+      }
+    }
+
+    // escape helper
+    function escapeHtml(s){ 
+        return s.replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]) 
+    }
+
+  // insert handler
+  btn.addEventListener('click', async () => {
+    const val1 = input1.value.trim()
+    const val2 = input2.value.trim()
+    if (!val1 && !val2) return (msg.textContent = 'Enter some data')
+
+    try {
+      const { data, error } = await supabase
+        .from(TABLE)
+        .insert([{ text_field_1: val1, tf2: val2 }])
+        .select() // returns inserted row(s)
+      if (error) throw error
+      msg.textContent = 'Comment Sent!'
+      // input1.value = ''
+      input2.value = ''
+      await load() // refresh list after insert
+    } catch (e) {
+      msg.textContent = 'Error: ' + (e.message || e)
+      console.error(e)
+    }
+  })
+
+    // initial load
+    load()
+  </script>
