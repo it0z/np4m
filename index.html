@@ -419,18 +419,31 @@
 <br>
 
 
-  <ul id="list"></ul>
+  <h1>Table: test</h1>
+  <ul id="list">Loading…</ul>
 
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-    const supabase = createClient('https://sjoejgimzoptridvexsx.supabase.co', 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz')
-    const TABLE = 'test'
+
+    const SUPA_URL = 'https://sjoejgimzoptridvexsx.supabase.co'   // replace if different
+    const SUPA_KEY = 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz'                             // paste anon key here
+    const TABLE = 'test'                                         // your table name
+
+    const supabase = createClient(SUPA_URL, SUPA_KEY)
 
     async function load() {
-      const { data, error } = await supabase.from(TABLE).select('*').order('id')
-      if (error) return document.getElementById('list').textContent = 'Error'
-      document.getElementById('list').innerHTML = (data || []).map(r => `<li>${(r.name ?? JSON.stringify(r)).toString().replace(/</g,'&lt;')}</li>`).join('')
+      const res = document.getElementById('list')
+      try {
+        const { data, error } = await supabase.from(TABLE).select('*').order('id', { ascending: true })
+        if (error) throw error
+        res.innerHTML = (data || []).map(r => `<li>${escapeHtml(JSON.stringify(r))}</li>`).join('') || '<li>(no rows)</li>'
+      } catch (e) {
+        res.textContent = 'Error: ' + (e.message || e)
+        console.error(e)
+      }
     }
+
+    function escapeHtml(s){ return s.replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]) }
 
     load()
   </script>
