@@ -446,7 +446,7 @@
       try {
         const { data, error } = await supabase.from(TABLE).select('text_field_1').order('id', { ascending: true })
         if (error) throw error
-        res.innerHTML = (data || []).map(r => `<li>${escapeHtml(JSON.stringify(r))}</li>`).join('') || '<li>(no rows)</li>'
+        res.innerHTML = (data || []).map(r => `<li>${escapeHtml(String(r.text_field_1 ?? ''))}</li>`).join('') || '<li>(no rows)</li>'
       } catch (e) {
         res.textContent = 'Error: ' + (e.message || e)
         console.error(e)
