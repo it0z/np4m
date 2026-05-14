@@ -417,6 +417,26 @@
 </div>
 </center>
 <br>
+
+
+  <ul id="list"></ul>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+    const supabase = createClient('https://sjoejgimzoptridvexsx.supabase.co', 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz')
+    const TABLE = 'test'
+
+    async function load() {
+      const { data, error } = await supabase.from(TABLE).select('*').order('id')
+      if (error) return document.getElementById('list').textContent = 'Error'
+      document.getElementById('list').innerHTML = (data || []).map(r => `<li>${(r.name ?? JSON.stringify(r)).toString().replace(/</g,'&lt;')}</li>`).join('')
+    }
+
+    load()
+  </script>
+
+	
+	
 <script src="script.js" defer></script>
 </body>
 <footer id="footer">
