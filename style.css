@@ -4,6 +4,15 @@
 	font-weight: <weight>;
 	font-style: normal;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+}
+
 body{
 	margin: 0 auto;
 	background-color: black;
@@ -12,6 +21,7 @@ body{
 	background-image: url(https://64.media.tumblr.com/06807ff010acf77991fb59e6888da60b/d7bfbdfdedf8c0f2-96/s1280x1920/f608e4c48f0783e0c446ea6e9fed563565f4d077.gif);
 	background-attachment: fixed;
 	background-size: 124px 124px;
+
 }
 
 
@@ -96,7 +106,7 @@ a{
 .linkContainer{
 	background: #333;
 	width: 70%;
-	height: 200%;
+	height: auto;
 	border: 10px solid #000;
 	
 	font-size: 30px;
