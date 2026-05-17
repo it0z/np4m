@@ -20,16 +20,18 @@
 	display: inline-block;
 	position: relative; /* parent to nameBanner class */
 	background-color: #000;
-
+    margin: 10px;
+    border: 10px solid #000;
+    border-radius: 20px;
 }
 .divShrinkWrap img{
 	display: block;
-    height: 400px;
+    height: 375px;
     border-radius: 20px;
 }
 .divShrinkWrap img:hover{
 
-    opacity: .9;
+    opacity: .8;
 }
 .nameBanner{
 	position: absolute; 
@@ -37,16 +39,12 @@
 	left: 0;
 	height: 30px;
 	width: 100%;
-
     font-size: 20px;
 	color: #FFF;
 	font-weight: bold;
-
     background-color: black;
     opacity: 0.8;
-
 	text-shadow: 2px 2px 5px #FFF;
-
 	display: flex;
     align-items: center; /* Vertically centers the content */
     justify-content: center;
@@ -100,7 +98,7 @@
 <div id="siteLogo"><a href="index.html">Our Pets </a><img src="redBird.png"></div>
 <div id="clock1">clock space</div>
 <center>
-<div class="linkContainer" onresize="adjustHeight()">
+
 <br><br>
 
 
@@ -176,7 +174,6 @@
 </script>
 
 
-</div>
 </center>
 <script src="script.js" defer></script>
 </body>
