@@ -106,15 +106,13 @@ a{
 .linkContainer{
 	background: #333;
 	width: 70%;
+	min-height: 100%;
 	height: auto;
 	border: 10px solid #000;
-	
 	font-size: 30px;
-
 	box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
 	border-bottom: none;
 	border-top: none;
-
 	background: rgba(0,0,0,0.6);
 }
 .linkContainer a{
