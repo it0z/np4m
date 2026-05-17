@@ -17,7 +17,7 @@
 }
 .divShrinkWrap img{
 	display: block;
-		border-top-right-radius: 20px;
+	border-top-right-radius: 20px;
 	border-top-left-radius: 20px;
 }
 .customizeBtn{
@@ -71,12 +71,58 @@
 	border-left: none;
 	border-right: none;
 }
+
+#showcaseDiv{
+	position:	fixed;
+	left: 		50%;
+	top:		50%;
+	border:		1px dotted white;
+	width: 		600px;
+	height: 	600px;
+	transform: 	translate(-50%, -50%);
+	z-index: 	20;
+	background: white;
+
+	border: 10px solid #000;
+	display: none;
+}
+
+#closeThis{
+	position: absolute; 
+	top:10px; 
+	right:10px; 
+	width: 40px;
+	height: 40px;
+	background-color: white;
+	border-radius: 50%;
+	border: 2px solid ##6E6E6E;
+	z-index: 	21;
+}
+#closeThis img{
+	opacity: .7;
+}
+
+.makeFit{
+	height: 100%;
+
+}
+
+#overlay{
+  	position:		fixed;
+  	inset: 			0; /* top:0; right:0; bottom:0; left:0 */
+  	background: 	rgba(0, 0, 0, 0.818);
+  	display: 		none;
+  	z-index: 		19; /* below showcase*/
+}
+
 </style>
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <!-- Cool Pink Pointer Glitter - https://www.cursors-4u.com/cursor/cool-pink-pointer-glitter -->
 <link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/cool-pink-pointer-glitter-3488f1ab-32.css">
 <!-- End www.Cursors-4U.com Code -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 <body onload="testExtF()">
@@ -116,19 +162,22 @@
 	<div class="dropdown" onclick="dropdownF('dd4')">
 		Testing Area
 		<div id="dd4" class="dropdown-content">
-			<a href="db.html" target="_blank">Leave a Comment</a>     
-			<a href="food.html" target="_blank">Food Archive</a>
+			<a href="db.html" target="_blank">Leave a Comment</a>            
   		</div>
 	</div>
 </div>
 <div id="siteLogo"><a href="index.html">Our Pets </a><img src="redBird.png"></div>
 <div id="clock1">clock space</div>
 <center>
+
+<div id="overlay"></div>
+<div id="showcaseDiv"></div>
+
 <br><br>
 <h1>lilkeeree’s pets</h1>
 <br>
 <div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Ardeillia/1/7.png"><img src="https://pets.neopets.com/cpn/Ardeillia/1/4.png" title="Ardeillia"></a>
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Ardeillia/1/7.png')" src="https://pets.neopets.com/cpn/Ardeillia/1/4.png" title="Ardeillia">
 	<div class="nameBanner">Ardeillia</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Ardeillia" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -137,7 +186,7 @@
 	</div>
 </div>
 <div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Bakkunawa/1/7.png"><img src="https://pets.neopets.com/cpn/Bakkunawa/1/4.png" title="Bakkunawa"></a>
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Bakkunawa/1/7.png')" src="https://pets.neopets.com/cpn/Bakkunawa/1/4.png" title="Bakkunawa">
 	<div class="nameBanner">Bakkunawa</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Bakkunawa" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -146,7 +195,7 @@
 	</div>
 </div>
 <div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/kambeign/1/7.png"><img src="https://pets.neopets.com/cpn/kambeign/1/4.png" title="kambeign"></a>
+	<img onclick="dispThis('https://pets.neopets.com/cpn/kambeign/1/7.png')" src="https://pets.neopets.com/cpn/kambeign/1/4.png" title="Kambeign">
 	<div class="nameBanner">Kambeign</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=kambeign" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -155,7 +204,7 @@
 	</div>
 </div>
 <div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Kiwikiti/1/7.png"><img src="https://pets.neopets.com/cpn/Kiwikiti/1/4.png" title="Kiwikiti"></a>
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Kiwikiti/1/7.png')" src="https://pets.neopets.com/cpn/Kiwikiti/1/4.png" title="Kiwikiti">
 	<div class="nameBanner">Kiwikiti</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Kiwikiti" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -163,8 +212,8 @@
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Kiwikiti" target="_blank" title="View Petpet on Neopets"><img src="redBird.png"></a>
 	</div>
 </div>
-<div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Lassooo/1/7.png"><img src="https://pets.neopets.com/cpn/Lassooo/1/4.png" title="Lassooo"></a>
+<div class="divShrinkWrap">
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Lassooo/1/7.png')" src="https://pets.neopets.com/cpn/Lassooo/1/4.png" title="Lassooo">
 	<div class="nameBanner">Lassooo</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Lassooo" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -172,8 +221,8 @@
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Lassooo" target="_blank" title="View Petpet on Neopets"><img src="redBird.png"></a>
 	</div>
 </div>
-<div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Leichara/1/7.png"><img src="https://pets.neopets.com/cpn/Leichara/1/4.png" title="Leichara"></a>
+<div class="divShrinkWrap">
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Leichara/1/7.png')" src="https://pets.neopets.com/cpn/Leichara/1/4.png" title="Leichara">
 	<div class="nameBanner">Leichara</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Leichara" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -181,8 +230,8 @@
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Leichara" target="_blank" title="View Petpet on Neopets"><img src="redBird.png"></a>
 	</div>
 </div>
-<div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Lilkeeree/1/7.png"><img src="https://pets.neopets.com/cpn/Lilkeeree/1/4.png" title="Lilkeeree"></a>
+<div class="divShrinkWrap">
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Lilkeeree/1/7.png')" src="https://pets.neopets.com/cpn/Lilkeeree/1/4.png" title="Lilkeeree">
 	<div class="nameBanner">Lilkeeree</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=lilkeeree" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -191,7 +240,7 @@
 	</div>
 </div>
 <div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Mei_Tsaa/2/7.png"><img src="https://pets.neopets.com/cpn/Mei_Tsaa/2/4.png" title="Mei_Tsaa"></a>
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Mei_Tsaa/1/7.png')" src="https://pets.neopets.com/cpn/Mei_Tsaa/1/4.png" title="Mei_Tsaa">
 	<div class="nameBanner">Mei_Tsaa</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Mei_Tsaa" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -200,7 +249,7 @@
 	</div>
 </div>
 <div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Pshyanna/1/7.png"><img src="https://pets.neopets.com/cpn/Pshyanna/1/4.png" title="Pshyanna"></a>
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Pshyanna/1/7.png')" src="https://pets.neopets.com/cpn/Pshyanna/1/4.png" title="Pshyanna">
 	<div class="nameBanner">Pshyanna</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Pshyanna" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -209,7 +258,7 @@
 	</div>
 </div>
 <div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Raikujo/1/7.png"><img src="https://pets.neopets.com/cpn/Raikujo/1/4.png" title="Raikujo"></a>
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Raikujo/1/7.png')" src="https://pets.neopets.com/cpn/Raikujo/1/4.png" title="Raikujo">
 	<div class="nameBanner">Raikujo</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Raikujo" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -218,7 +267,7 @@
 	</div>
 </div>
 <div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Rerro_Ferro/2/7.png"><img src="https://pets.neopets.com/cpn/Rerro_Ferro/2/4.png" title="Rerro_Ferro"></a>
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Rerro_Ferro/1/7.png')" src="https://pets.neopets.com/cpn/Rerro_Ferro/1/4.png" title="Rerro_Ferro">
 	<div class="nameBanner">Rerro_Ferro</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Rerro_Ferro" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -226,8 +275,8 @@
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Rerro_Ferro" target="_blank" title="View Petpet on Neopets"><img src="redBird.png"></a>
 	</div>
 </div>
-<div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Santaye/1/7.png"><img src="https://pets.neopets.com/cpn/Santaye/1/4.png" title="Santaye"></a>
+<div class="divShrinkWrap">
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Santaye/1/7.png')" src="https://pets.neopets.com/cpn/Santaye/1/4.png" title="Santaye">
 	<div class="nameBanner">Santaye</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Santaye" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -235,8 +284,8 @@
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Santaye" target="_blank" title="View Petpet on Neopets"><img src="redBird.png"></a>
 	</div>
 </div>
-<div class="divShrinkWrap">	
-	<a href="https://pets.neopets.com/cpn/Vandiniii/2/7.png"><img src="https://pets.neopets.com/cpn/Vandiniii/2/4.png" title="Vandiniii"></a>
+<div class="divShrinkWrap">
+	<img onclick="dispThis('https://pets.neopets.com/cpn/Vandiniii/1/7.png')" src="https://pets.neopets.com/cpn/Vandiniii/1/4.png" title="Vandiniii">
 	<div class="nameBanner">Vandiniii</div>
 	<div class="customizeBtn">
 		<a href="https://www.neopets.com/customise/?view=Vandiniii" target="_blank" title="Customize on Neopets"><img src="blueDress.png"></a>
@@ -428,6 +477,25 @@
 	</div>
 </div>
 </center>
+
+<script>
+	let showcase = document.getElementById("showcaseDiv");
+	let overlay = document.getElementById("overlay"); 
+	function dispThis(someImg){
+		//alert();
+		showcase.style.display = "block";
+		showcase.innerHTML = "<img class='makeFit' src=" + someImg + "><div id='closeThis' onclick='closeMe()'><img style='width: 40px;' src='exit.png'></div>";
+		overlay.style.display = "block";
+	
+	}
+
+	function closeMe(){
+		showcase.style.display = "none";
+		overlay.style.display = "none";
+		showcase.innerHTML = "";
+	}
+</script>
+
 <br>
 <script src="script.js" defer></script>
 </body>
