@@ -71,6 +71,52 @@ const siteLogoJS = '<a href="index.html">Our Pets </a><img src="icons/redBird.pn
 document.getElementById('siteLogo').insertAdjacentHTML('beforeend', siteLogoJS);
 
 
+
+
+// larger pet img preloading
+
+const pet_urls1 = [
+  'https://pets.neopets.com/cpn/Ardeillia/1/7.png',
+  'https://pets.neopets.com/cpn/Bakkunawa/1/7.png',
+  'https://pets.neopets.com/cpn/kambeign/1/7.png',
+  'https://pets.neopets.com/cpn/Kiwikiti/1/7.png',
+  'https://pets.neopets.com/cpn/Lassooo/1/7.png',
+  'https://pets.neopets.com/cpn/Leichara/1/7.png',
+  'https://pets.neopets.com/cpn/Lilkeeree/1/7.png',
+  'https://pets.neopets.com/cpn/Mei_Tsaa/1/7.png',
+  'https://pets.neopets.com/cpn/Pshyanna/1/7.png',
+  'https://pets.neopets.com/cpn/Raikujo/1/7.png',
+  'https://pets.neopets.com/cpn/Rerro_Ferro/1/7.png',
+  'https://pets.neopets.com/cpn/Santaye/1/7.png',
+  'https://pets.neopets.com/cpn/Vandiniii/1/7.png',
+  'https://pets.neopets.com/cpn/abyssik/1/7.png',
+  'https://pets.neopets.com/cpn/akibonn/1/7.png',
+  'https://pets.neopets.com/cpn/Birinci/1/7.png',
+  'https://pets.neopets.com/cpn/Caerbanogi/1/7.png',
+  'https://pets.neopets.com/cpn/Erikor/1/7.png',
+  'https://pets.neopets.com/cpn/Fissionfang/1/7.png',
+  'https://pets.neopets.com/cpn/Hellaqwent/1/7.png',
+  'https://pets.neopets.com/cpn/Hitogamii/1/7.png',
+  'https://pets.neopets.com/cpn/Izklaidet/1/7.png',
+  'https://pets.neopets.com/cpn/Kenquru/1/7.png',
+  'https://pets.neopets.com/cpn/Kuikorosaur/1/7.png',
+  'https://pets.neopets.com/cpn/Obocodo/1/7.png',
+  'https://pets.neopets.com/cpn/Quayahroh/1/7.png',
+  'https://pets.neopets.com/cpn/Stalfoh/1/7.png',
+  'https://pets.neopets.com/cpn/takoyakae/1/7.png',
+  'https://pets.neopets.com/cpn/Uwushi/1/7.png',
+  'https://pets.neopets.com/cpn/Wrathorin/1/7.png',
+  'https://pets.neopets.com/cpn/zenidos/1/7.png',
+  'https://pets.neopets.com/cpn/zimgorigaz/1/7.png',
+  'https://pets.neopets.com/cpn/Zotomxi/1/7.png'
+];
+
+pet_urls1.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
+
 function clock1(){
   
   const now = new Date();
