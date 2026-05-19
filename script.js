@@ -5,7 +5,7 @@ function testExtF(){
 
 const favLink = document.createElement('link');
 favLink.rel = 'icon';
-favLink.href = 'redBird.png';
+favLink.href = 'icons/redBird.png';
 document.head.appendChild(favLink);
 
 
