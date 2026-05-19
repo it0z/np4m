@@ -78,7 +78,7 @@
 
 #footer{
 	width: 100%;
-	height: 200px;
+	height: 400px;
 	background-color: #000;
 	color: #FFF;
 	text-align: center;
@@ -98,7 +98,6 @@
 	transform: 	translate(-50%, -50%);
 	z-index: 	20;
 	background: white;
-
 	border: 10px solid #000;
 	display: none;
 }
@@ -117,10 +116,8 @@
 #closeThis img{
 	opacity: .7;
 }
-
 .makeFit{
 	height: 100%;
-
 }
 
 #overlay{
@@ -129,6 +126,42 @@
   	background: 	rgba(0, 0, 0, 0.818);
   	display: 		none;
   	z-index: 		19; /* below showcase*/
+}
+
+/* topbanner nav-bar height is 40px */
+#extraBtns{
+	position: fixed;
+	top: 40px;
+	right: 0;
+	width: 120px;
+	height: 70px;
+	display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center;
+	border: none;
+	z-index: 5;
+
+}
+
+#extraBtns img{
+	height: 30px;
+	margin-left: 4px;
+}
+
+#extraBtns img:hover{
+	margin-bottom: 4px;
+}
+
+#extraBtns {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#extraBtns.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
 }
 
 </style>
@@ -145,7 +178,39 @@
 
 
 </head>
-<body onload="testExtF()">
+
+<body onload="testExtF()"> <!-- BODY START --------------------------------------------------------------------------------------------------------->
+
+<div id="extraBtns">
+	<img src="icons/chest.png" title="Inventory" onclick="fireLink('https://www.neopets.com/inventory.phtml')">
+	<img src="icons/coins.png" title="Bank" onclick="fireLink('https://www.neopets.com/bank.phtml')">
+	<img src="icons/swords.png" title="BD" onclick="fireLink('https://www.neopets.com/dome/')">
+</div>
+
+
+
+<script>
+	function fireLink(x){
+		// alert();
+		window.open(x, '_blank').focus();
+	}
+
+// scroll to hide code 
+const target = document.getElementById('extraBtns');
+const threshold = 100; // pixels scrolled from top
+
+function checkScroll() {
+  if (window.scrollY >= threshold) target.classList.add('hidden');
+  else target.classList.remove('hidden');
+}
+
+window.addEventListener('scroll', checkScroll, { passive: true });
+checkScroll(); // initial state
+
+</script>
+
+
+
 <div id="topBanner">
 	<!-- content loaded via JS -->
 </div>
