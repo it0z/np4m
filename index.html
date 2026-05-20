@@ -106,12 +106,14 @@
 	position: absolute; 
 	top:10px; 
 	right:10px; 
-	width: 40px;
+	
 	height: 40px;
 	background-color: white;
 	border-radius: 50%;
 	border: 2px solid ##6E6E6E;
-	z-index: 	21;
+	z-index: 21;
+	background: white;
+
 }
 #closeThis img{
 	opacity: .7;
@@ -131,19 +133,21 @@
 /* topbanner nav-bar height is 40px */
 #extraBtns{
 	position: fixed;
-	top: 40px;
+	top: 55px;
 	right: 0;
 	width: 120px;
-	height: 70px;
+	height: 40px;
 	display: flex;
     align-items: center; /* Vertically centers the content */
     justify-content: center;
 	border: none;
 	z-index: 5;
 
+	width: 100%;
 }
 
 #extraBtns img{
+	  display: inline-block; /* or block if stacked */
 	height: 30px;
 	margin-left: 4px;
 }
@@ -163,7 +167,13 @@
   transform: translateY(-10px);
   pointer-events: none;
 }
-
+#msgbox{
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	background-color: green;
+	font-size: 20px;
+}
 </style>
 
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -182,32 +192,14 @@
 <body onload="testExtF()"> <!-- BODY START --------------------------------------------------------------------------------------------------------->
 
 <div id="extraBtns">
-	<img src="icons/chest.png" title="Inventory" onclick="fireLink('https://www.neopets.com/inventory.phtml')">
-	<img src="icons/coins.png" title="Bank" onclick="fireLink('https://www.neopets.com/bank.phtml')">
-	<img src="icons/swords.png" title="BD" onclick="fireLink('https://www.neopets.com/dome/')">
+	<img src="icons/chest.png" title="FT2 Inventory" onclick="fireLink('https://www.neopets.com/inventory.phtml')">
+	<img src="icons/coins.png" title="FT2 Bank" onclick="fireLink('https://www.neopets.com/bank.phtml')">
+	<img src="icons/swords.png" title="FT2 Battledome" onclick="fireLink('https://www.neopets.com/dome/')">
+
+	<div id="msgbox">Use Shift + c to change up the cursor<i>!</i></div>
 </div>
 
 
-
-<script>
-	function fireLink(x){
-		// alert();
-		window.open(x, '_blank').focus();
-	}
-
-// scroll to hide code 
-const target = document.getElementById('extraBtns');
-const threshold = 100; // pixels scrolled from top
-
-function checkScroll() {
-  if (window.scrollY >= threshold) target.classList.add('hidden');
-  else target.classList.remove('hidden');
-}
-
-window.addEventListener('scroll', checkScroll, { passive: true });
-checkScroll(); // initial state
-
-</script>
 
 
 
@@ -227,6 +219,32 @@ checkScroll(); // initial state
 <div id="showcaseDiv"></div>
 
 <br><br>
+
+<script>
+	function fireLink(x){
+		// alert();
+		window.open(x, '_blank').focus();
+	}
+
+
+
+// scroll to hide code 
+const target = document.getElementById('extraBtns');
+const threshold = 100; // pixels scrolled from top
+
+function checkScroll() {
+  if (window.scrollY >= threshold) target.classList.add('hidden');
+  else target.classList.remove('hidden');
+
+}
+
+window.addEventListener('scroll', checkScroll, { passive: true });
+checkScroll(); // initial state
+
+</script>
+
+
+<br>
 <h1>lilkeeree’s pets</h1>
 <br>
 <div class="divShrinkWrap">	
@@ -684,4 +702,6 @@ window.giveHeadPat = async function(petName) {
 <footer id="footer">
 <br>
 	the void.
+	<br>
+
 </footer>
