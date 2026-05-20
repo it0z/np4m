@@ -14,6 +14,27 @@ custCursor.rel = 'stylesheet';
 custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/cool-pink-pointer-glitter-3488f1ab-32.css';
 document.head.appendChild(custCursor);
 
+let ccn = 0;
+const cursorArray = [
+  'https://cdn.cursors-4u.net/cursors/animated/cool-pink-pointer-glitter-3488f1ab-32.css',
+  'https://cdn.cursors-4u.net/cursors/animated/slapping-cat-1348ecde-128.css',
+  'https://cdn.cursors-4u.net/cursors/animated/arrow-825426cd-63.css',
+  'https://cdn.cursors-4u.net/cursors/animated/cat-paw-curl-f8836eeb-128.css',
+  'https://cdn.cursors-4u.net/cursors/animated/happy-cinnamoroll-eea44ff2-128.css'
+];
+
+function changeCursor(){
+  ccn = (ccn + 1) % cursorArray.length;
+  custCursor.href = cursorArray[ccn];
+  if (!custCursor.isConnected) document.head.appendChild(custCursor);
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.shiftKey && e.key.toLowerCase() === 'c') {
+    if (['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+    changeCursor();
+  }
+});
 
 const topBannerHTML = `
 	<div class="dropdown" onclick="dropdownF('dd1')">
