@@ -193,10 +193,9 @@
 
 #footMsgBar{
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;            /* or a fixed width like 600px */
+  bottom: 0;
+  left: 0;
+  width: 100%;            /* or a fixed width like 600px */
   height: 40px;
   background-color: black;
   display: flex;         /* makes vertical centering reliable */
@@ -206,7 +205,7 @@
   text-align: center;
   font-family: "Pixelify Sans", sans-serif;
   font-size: 20px;
-  border-radius: 50px;
+	border-top: 5px solid #333;
   visibility: hidden;
 }
 
@@ -789,8 +788,8 @@ window.giveHeadPat = async function(petName) {
 	const foot = document.getElementById("footMsgBar");
 	foot.style.visibility = 'visible';
 	foot.innerHTML = petName + " receives 1 headpat. " + petName + "'s total headpat count is now " + newCount + ".";
-	setTimeout(() => { foot.innerHTML = ''; }, 4000);
-	setTimeout(() => { foot.style.visibility = 'hidden'; }, 4000);
+	setTimeout(() => { foot.innerHTML = ''; }, 2000);
+	setTimeout(() => { foot.style.visibility = 'hidden'; }, 2000);
 	// alert(petName + " receives 1 headpat! " + petName + "'s total headpat count is now " + newCount + "!")
 
 	// 
