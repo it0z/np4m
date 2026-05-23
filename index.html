@@ -3,6 +3,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 <!-- font stuff end -->		
 <style>
 .divShrinkWrap{
@@ -34,7 +36,6 @@
 }
 .divShrinkWrap img{
 	display: block;
-
 	border: 5px solid #000;
 	opacity: 0.80;
 }
@@ -123,13 +124,15 @@
 	height: 100%;
 }
 
-#overlay{
+#darkOverlay{
   	position:		fixed;
   	inset: 			0; /* top:0; right:0; bottom:0; left:0 */
   	background: 	rgba(0, 0, 0, 0.818);
   	display: 		none;
   	z-index: 		19; /* below showcase*/
 }
+
+
 
 /* topbanner nav-bar height is 40px */
 #extraBtns{
@@ -148,7 +151,7 @@
 }
 
 #extraBtns img{
-	  display: inline-block; /* or block if stacked */
+	display: inline-block; /* or block if stacked */
 	height: 30px;
 	margin-left: 4px;
 }
@@ -176,6 +179,36 @@
 	font-size: 20px;
 }
 
+.heart_overlay {
+	position: absolute;
+	top: 0; 
+	left: 0;   
+	width: 301px;
+	height: 300px;
+	border: none;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	visibility: hidden;
+}
+
+#footMsgBar{
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;            /* or a fixed width like 600px */
+  height: 40px;
+  background-color: black;
+  display: flex;         /* makes vertical centering reliable */
+  align-items: center;   /* vertical center */
+  justify-content: center; /* horizontal center of contents */
+  line-height: 40px;     /* not needed with flex but harmless */
+  text-align: center;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 20px;
+  border-radius: 50px;
+  visibility: hidden;
+}
 
 </style>
 
@@ -202,10 +235,6 @@
 	<div id="msgbox">Use Shift + c to change up the cursor<i>!</i></div>
 </div>
 
-
-
-
-
 <div id="topBanner">
 	<!-- content loaded via JS -->
 </div>
@@ -218,7 +247,7 @@
 <div id="clock1">clock space</div>
 <center>
 
-<div id="overlay"></div>
+<div id="darkOverlay"></div>
 <div id="showcaseDiv"></div>
 
 <br><br>
@@ -250,20 +279,21 @@ checkScroll(); // initial state
 <br>
 <h1>lilkeeree’s pets</h1>
 <br>
+
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Ardeillia/1/7.png')" src="https://pets.neopets.com/cpn/Ardeillia/1/4.png" title="Ardeillia">
 	<div class="nameBanner">Ardeillia</div>
-	<div class="customizeBtn photo-wrap">
-		<a href="https://www.neopets.com/books_read.phtml?pet_name=Ardeillia" target="_blank" title="View all of Ardeillia's books!"><img src="erika/Book_72.png"></a>
+	<div class="customizeBtn">
+		<img src="erika/Book_72.png" onclick="fireLink('https://www.neopets.com/books_read.phtml?pet_name=Ardeillia')">
 		<a href="https://www.neopets.com/customise/?view=Ardeillia" target="_blank" title="Customize Ardeillia!"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Ardeillia" target="_blank" title="View Ardeillia's Lookup!"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Ardeillia" target="_blank" title="View Ardeillia's Petpet!"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Ardeillia" target="_blank" title="Edit Ardeillia's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Ardeillia a headpat!" onclick="giveHeadPat('Ardeillia')">
-
 	</div>
-	<!--headpat image from freepik.com -->
+	<img id="Ardeillia_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Bakkunawa/1/7.png')" src="https://pets.neopets.com/cpn/Bakkunawa/1/4.png" title="Bakkunawa">
 	<div class="nameBanner">Bakkunawa</div>
@@ -275,7 +305,23 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Bakkunawa" target="_blank" title="Edit Bakkunawa's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Bakkunawa a headpat!" onclick="giveHeadPat('Bakkunawa')">
 	</div>
+	<img id="Bakkunawa_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
+<div class="divShrinkWrap">	
+	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Demitrai/1/7.png')" src="https://pets.neopets.com/cpn/Demitrai/1/4.png" title="Demitrai">
+	<div class="nameBanner">Demitrai</div>
+	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=Demitrai" target="_blank" title="View all of Demitrai's books!"><img src="erika/Book_72.png"></a>
+		<a href="https://www.neopets.com/customise/?view=Demitrai" target="_blank" title="Customize Demitrai!"><img src="erika/Shirt_72.png"></a>
+		<a href="https://www.neopets.com/petlookup.phtml?pet=Demitrai" target="_blank" title="View Demitrai's Lookup!"><img src="erika/Magnify_72.png"></a>
+		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Demitrai" target="_blank" title="View Demitrai's Petpet!"><img src="erika/Collar_72.png"></a>
+		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Demitrai" target="_blank" title="Edit Demitrai's Lookup Code!"><img src="erika/Edit_72.png"></a>
+		<img src="erika/Pat_72.png" title="Give Demitrai a headpat!" onclick="giveHeadPat('Demitrai')">
+	</div>
+	<img id="Demitrai_hearts" class="heart_overlay" src="gifs/hearts.gif">
+</div>
+
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/kambeign/1/7.png')" src="https://pets.neopets.com/cpn/kambeign/1/4.png" title="Kambeign">
 	<div class="nameBanner">Kambeign</div>
@@ -287,7 +333,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=kambeign" target="_blank" title="Edit Kambeign's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Kambeign a headpat!" onclick="giveHeadPat('Kambeign')">
 	</div>
+	<img id="Kambeign_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Kiwikiti/1/7.png')" src="https://pets.neopets.com/cpn/Kiwikiti/1/4.png" title="Kiwikiti">
 	<div class="nameBanner">Kiwikiti</div>
@@ -299,7 +347,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Kiwikiti" target="_blank" title="Edit Kiwikiti's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Kiwikiti a headpat!" onclick="giveHeadPat('Kiwikiti')">
 	</div>
+	<img id="Kiwikiti_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Lassooo/1/7.png')" src="https://pets.neopets.com/cpn/Lassooo/1/4.png" title="Lassooo">
 	<div class="nameBanner">Lassooo</div>
@@ -311,7 +361,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Lassooo" target="_blank" title="Edit Lassooo's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Lassooo a headpat!" onclick="giveHeadPat('Lassooo')">
 	</div>
+	<img id="Lassooo_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Leichara/1/7.png')" src="https://pets.neopets.com/cpn/Leichara/1/4.png" title="Leichara">
 	<div class="nameBanner">Leichara</div>
@@ -323,7 +375,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Leichara" target="_blank" title="Edit Leichara's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Leichara a headpat!" onclick="giveHeadPat('Leichara')">
 	</div>
+	<img id="Leichara_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Lilkeeree/1/7.png')" src="https://pets.neopets.com/cpn/Lilkeeree/1/4.png" title="Lilkeeree">
 	<div class="nameBanner">Lilkeeree</div>
@@ -335,7 +389,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=lilkeeree" target="_blank" title="Edit Lilkeeree's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Lilkeeree a headpat!" onclick="giveHeadPat('Lilkeeree')">
 	</div>
+	<img id="Lilkeeree_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Mei_Tsaa/1/7.png')" src="https://pets.neopets.com/cpn/Mei_Tsaa/1/4.png" title="Mei_Tsaa">
 	<div class="nameBanner">Mei_Tsaa</div>
@@ -347,7 +403,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Mei_Tsaa" target="_blank" title="Edit Mei_Tsaa's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Mei_Tsaa a headpat!" onclick="giveHeadPat('Mei_Tsaa')">
 	</div>
+	<img id="Mei_Tsaa_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Pshyanna/1/7.png')" src="https://pets.neopets.com/cpn/Pshyanna/1/4.png" title="Pshyanna">
 	<div class="nameBanner">Pshyanna</div>
@@ -359,7 +417,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Pshyanna" target="_blank" title="Edit Pshyanna's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Pshyanna a headpat!" onclick="giveHeadPat('Pshyanna')">
 	</div>
+	<img id="Pshyanna_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Raikujo/1/7.png')" src="https://pets.neopets.com/cpn/Raikujo/1/4.png" title="Raikujo">
 	<div class="nameBanner">Raikujo</div>
@@ -371,7 +431,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Raikujo" target="_blank" title="Edit Raikujo's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Raikujo a headpat!" onclick="giveHeadPat('Raikujo')">
 	</div>
+	<img id="Raikujo_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Rerro_Ferro/1/7.png')" src="https://pets.neopets.com/cpn/Rerro_Ferro/1/4.png" title="Rerro_Ferro">
 	<div class="nameBanner">Rerro_Ferro</div>
@@ -383,7 +445,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Rerro_Ferro" target="_blank" title="Edit Rerro_Ferro's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Rerro_Ferro a headpat!" onclick="giveHeadPat('Rerro_Ferro')">
 	</div>
+	<img id="Rerro_Ferro_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Santaye/1/7.png')" src="https://pets.neopets.com/cpn/Santaye/1/4.png" title="Santaye">
 	<div class="nameBanner">Santaye</div>
@@ -395,7 +459,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Santaye" target="_blank" title="Edit Santaye's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Santaye a headpat!" onclick="giveHeadPat('Santaye')">
 	</div>
+	<img id="Santaye_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <div class="divShrinkWrap">
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Vandiniii/1/7.png')" src="https://pets.neopets.com/cpn/Vandiniii/1/4.png" title="Vandiniii">
 	<div class="nameBanner">Vandiniii</div>
@@ -407,7 +473,9 @@ checkScroll(); // initial state
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Vandiniii" target="_blank" title="Edit Vandiniii's Lookup Code!"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Vandiniii a headpat!" onclick="giveHeadPat('Vandiniii')">
 	</div>
+	<img id="Vandiniii_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 <!-- My Pets -------------------------------------------------------------------------------------------------------------------------------------------------->
 <h1>modoru’s pets</h1>
 <br>
@@ -415,226 +483,277 @@ checkScroll(); // initial state
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/abyssik/1/7.png')" src="https://pets.neopets.com/cpn/abyssik/1/4.png" title="Abyssik">
 	<div class="nameBanner">Abyssik</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=abyssik" target="_blank" title="View all of Abyssik's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=abyssik" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=abyssik" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=abyssik" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=abyssik" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Abyssik a headpat!" onclick="giveHeadPat('Abyssik')">
 	</div>
+	<img id="Abyssik_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/akibonn/1/7.png')" src="https://pets.neopets.com/cpn/akibonn/1/4.png" title="Akibonn">
 	<div class="nameBanner">Akibonn</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=akibonn" target="_blank" title="View all of Akibonn's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=akibonn" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=akibonn" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=akibonn" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=akibonn" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Akibonn a headpat!" onclick="giveHeadPat('Akibonn')">
 	</div>
+	<img id="Akibonn_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">
-	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Birinci/1/7.png')" src="https://pets.neopets.com/cpn/Birinci/1/4.png" title="Birinci">
+	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/birinci/1/7.png')" src="https://pets.neopets.com/cpn/birinci/1/4.png" title="Birinci">
 	<div class="nameBanner">Birinci</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=birinci" target="_blank" title="View all of Birinci's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=birinci" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=birinci" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=birinci" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=birinci" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Birinci a headpat!" onclick="giveHeadPat('Birinci')">
 	</div>
+	<img id="Birinci_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Caerbanogi/1/7.png')" src="https://pets.neopets.com/cpn/Caerbanogi/1/4.png" title="Caerbanogi">
 	<div class="nameBanner">Caerbanogi</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=Caerbanogi" target="_blank" title="View all of Caerbanogi's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=Caerbanogi" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Caerbanogi" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Caerbanogi" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Caerbanogi" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Caerbanogi a headpat!" onclick="giveHeadPat('Caerbanogi')">
 	</div>
+	<img id="Caerbanogi_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Erikor/1/7.png')" src="https://pets.neopets.com/cpn/Erikor/1/4.png" title="Erikor">
 	<div class="nameBanner">Erikor</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=Erikor" target="_blank" title="View all of Erikor's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=Erikor" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Erikor" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Erikor" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Erikor" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Erikor a headpat!" onclick="giveHeadPat('Erikor')">
 	</div>
+	<img id="Erikor_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Fissionfang/1/7.png')" src="https://pets.neopets.com/cpn/Fissionfang/1/4.png" title="Fissionfang">
 	<div class="nameBanner">Fissionfang</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=Fissionfang" target="_blank" title="View all of Fissionfang's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=Fissionfang" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Fissionfang" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Fissionfang" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Fissionfang" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Fissionfang a headpat!" onclick="giveHeadPat('Fissionfang')">
 	</div>
+	<img id="Fissionfang_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Hellaqwent/1/7.png')" src="https://pets.neopets.com/cpn/Hellaqwent/1/4.png" title="Hellaqwent">
 	<div class="nameBanner">Hellaqwent</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=hellaqwent" target="_blank" title="View all of Hellaqwent's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=hellaqwent" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=hellaqwent" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>	
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=hellaqwent" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=hellaqwent" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Hellaqwent a headpat!" onclick="giveHeadPat('Hellaqwent')">
 	</div>
+	<img id="Hellaqwent_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Hitogamii/1/7.png')" src="https://pets.neopets.com/cpn/Hitogamii/1/4.png" title="Hitogamii">
 	<div class="nameBanner">Hitogamii</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=Hitogamii" target="_blank" title="View all of Hitogamii's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=Hitogamii" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Hitogamii" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>	
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Hitogamii" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Hitogamii" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Hitogamii a headpat!" onclick="giveHeadPat('Hitogamii')">
 	</div>
+	<img id="Hitogamii_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">
-	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Izklaidet/1/7.png')" src="https://pets.neopets.com/cpn/Izklaidet/1/4.png" title="Izklaidet">
+	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/izklaidet/1/7.png')" src="https://pets.neopets.com/cpn/Izklaidet/1/4.png" title="Izklaidet">
 	<div class="nameBanner">Izklaidet</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=izklaidet" target="_blank" title="View all of Izklaidet's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=izklaidet" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=izklaidet" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=izklaidet" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=izklaidet" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Izklaidet a headpat!" onclick="giveHeadPat('Izklaidet')">
 	</div>
+	<img id="Izklaidet_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Kenquru/1/7.png')" src="https://pets.neopets.com/cpn/Kenquru/1/4.png" title="Kenquru">
 	<div class="nameBanner">Kenquru</div>
 	<div class="customizeBtn">
-
-		
-		<a href="https://www.neopets.com/books_read.phtml?pet_name=kenquru" target="_blank" title="View Books Read on Neopets"><img src="erika/Book_72.png"></a>
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=kenquru" target="_blank" title="View all of Kenquru's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=kenquru" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=kenquru" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>	
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=kenquru" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=kenquru" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Kenquru a headpat!" onclick="giveHeadPat('Kenquru')">
 	</div>
+	<img id="Kenquru_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Kuikorosaur/1/7.png')" src="https://pets.neopets.com/cpn/Kuikorosaur/1/4.png" title="Kuikorosaur">
 	<div class="nameBanner">Kuikorosaur</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=Kuikorosaur" target="_blank" title="View all of Kuikorosaur's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=Kuikorosaur" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Kuikorosaur" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>	
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Kuikorosaur" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Kuikorosaur" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Kuikorosaur a headpat!" onclick="giveHeadPat('Kuikorosaur')">
 	</div>
+	<img id="Kuikorosaur_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Obocodo/1/7.png')" src="https://pets.neopets.com/cpn/Obocodo/1/4.png" title="Obocodo">
 	<div class="nameBanner">Obocodo</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=obocodo" target="_blank" title="View all of Obocodo's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=obocodo" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=obocodo" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=obocodo" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=obocodo" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Obocodo a headpat!" onclick="giveHeadPat('Obocodo')">
 	</div>
+	<img id="Obocodo_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
-	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Quayahroh/1/7.png')" src="https://pets.neopets.com/cpn/Quayahroh/1/4.png" title="Quayahroh">
+	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/quayahroh/1/7.png')" src="https://pets.neopets.com/cpn/Quayahroh/1/4.png" title="Quayahroh">
 	<div class="nameBanner">Quayahroh</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=quayahroh" target="_blank" title="View all of Quayahroh's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=quayahroh" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=quayahroh" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=quayahroh" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=quayahroh" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Quayahroh a headpat!" onclick="giveHeadPat('Quayahroh')">
 	</div>
+	<img id="Quayahroh_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Stalfoh/1/7.png')" src="https://pets.neopets.com/cpn/Stalfoh/1/4.png" title="Stalfoh">
 	<div class="nameBanner">Stalfoh</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=Stalfoh" target="_blank" title="View all of Stalfoh's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=Stalfoh" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Stalfoh" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Stalfoh" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Stalfoh" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Stalfoh a headpat!" onclick="giveHeadPat('Stalfoh')">
 	</div>
+	<img id="Stalfoh_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/takoyakae/1/7.png')" src="https://pets.neopets.com/cpn/takoyakae/1/4.png" title="Takoyakae">
 	<div class="nameBanner">Takoyakae</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=takoyakae" target="_blank" title="View all of Takoyakae's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=takoyakae" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=takoyakae" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=takoyakae" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=takoyakae" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Takoyakae a headpat!" onclick="giveHeadPat('Takoyakae')">
 	</div>
+	<img id="Takoyakae_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
-	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Uwushi/1/7.png')" src="https://pets.neopets.com/cpn/Uwushi/1/4.png" title="Uwushi">
+	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/uwushi/1/7.png')" src="https://pets.neopets.com/cpn/Uwushi/1/4.png" title="Uwushi">
 	<div class="nameBanner">Uwushi</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=uwushi" target="_blank" title="View all of Uwushi's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=uwushi" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=uwushi" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=uwushi" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=uwushi" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Uwushi a headpat!" onclick="giveHeadPat('Uwushi')">
 	</div>
+	<img id="Uwushi_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Wrathorin/1/7.png')" src="https://pets.neopets.com/cpn/Wrathorin/1/4.png" title="Wrathorin">
 	<div class="nameBanner">Wrathorin</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=Wrathorin" target="_blank" title="View all of Wrathorin's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=Wrathorin" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Wrathorin" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Wrathorin" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Wrathorin" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Wrathorin a headpat!" onclick="giveHeadPat('Wrathorin')">
 	</div>
+	<img id="Wrathorin_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/zenidos/1/7.png')" src="https://pets.neopets.com/cpn/zenidos/1/4.png" title="Zenidos">
 	<div class="nameBanner">Zenidos</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=zenidos" target="_blank" title="View all of Zenidos's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=zenidos" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=zenidos" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=zenidos" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=zenidos" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Zenidos a headpat!" onclick="giveHeadPat('Zenidos')">
 	</div>
+	<img id="Zenidos_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/zimgorigaz/1/7.png')" src="https://pets.neopets.com/cpn/zimgorigaz/1/4.png" title="Zimgorigaz">
 	<div class="nameBanner">Zimgorigaz</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=zimgorigaz" target="_blank" title="View all of Zimgorigaz's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=zimgorigaz" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=zimgorigaz" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=zimgorigaz" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=zimgorigaz" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Zimgorigaz a headpat!" onclick="giveHeadPat('Zimgorigaz')">
 	</div>
+	<img id="Zimgorigaz_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Zotomxi/1/7.png')" src="https://pets.neopets.com/cpn/Zotomxi/1/4.png" title="Zotomxi">
 	<div class="nameBanner">Zotomxi</div>
 	<div class="customizeBtn">
+		<a href="https://www.neopets.com/books_read.phtml?pet_name=Zotomxi" target="_blank" title="View all of Zotomxi's books!"><img src="erika/Book_72.png"></a>
 		<a href="https://www.neopets.com/customise/?view=Zotomxi" target="_blank" title="Customize on Neopets"><img src="erika/Shirt_72.png"></a>
 		<a href="https://www.neopets.com/petlookup.phtml?pet=Zotomxi" target="_blank" title="View Lookup on Neopets"><img src="erika/Magnify_72.png"></a>
 		<a href="https://www.neopets.com/neopetpet.phtml?neopet_name=Zotomxi" target="_blank" title="View Petpet on Neopets"><img src="erika/Collar_72.png"></a>
 		<a href="https://www.neopets.com/neopet_desc.phtml?edit_petname=Zotomxi" target="_blank" title="Edit ur Pet's Lookup on Neopets"><img src="erika/Edit_72.png"></a>
 		<img src="erika/Pat_72.png" title="Give Zotomxi a headpat!" onclick="giveHeadPat('Zotomxi')">
 	</div>
+	<img id="Zotomxi_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
 </center>
+
+<div id="footMsgBar">
+	test text!
+</div>
+
+
+<script>
+
+
+
+
+
+</script>
 
 <script type="module">
 
@@ -664,45 +783,53 @@ window.giveHeadPat = async function(petName) {
       .eq('pet_name', petName)
     if (updateErr) throw updateErr
 
+	// alert msg 
+
+
+	const foot = document.getElementById("footMsgBar");
+	foot.style.visibility = 'visible';
+	foot.innerHTML = petName + " receives 1 headpat. " + petName + "'s total headpat count is now " + newCount + ".";
+	setTimeout(() => { foot.innerHTML = ''; }, 4000);
+	setTimeout(() => { foot.style.visibility = 'hidden'; }, 4000);
+	// alert(petName + " receives 1 headpat! " + petName + "'s total headpat count is now " + newCount + "!")
+
 	// 
-	alert(petName + " receives 1 headpat! " + petName + "'s total headpat count is now " + newCount + "!")
+	showHearts(petName);
 
     console.log('Incremented to', newCount)
   } catch (err) {
     console.error('Increment failed', err)
   }
+
+
 }
 
-
-
+function showHearts(x){
+	console.log('func');
+	const gif = document.getElementById(x + "_hearts");
+ 	if (!gif) return;
+ 	gif.style.visibility = 'visible';
+  	setTimeout(() => { gif.style.visibility = 'hidden'; }, 2000);
+}
 
   </script>
 
 <script>
 	let showcase = document.getElementById("showcaseDiv");
-	let overlay = document.getElementById("overlay"); 
+	let darkOverlay = document.getElementById("darkOverlay"); 
 	function dispThis(someImg){
 		//alert();
 		showcase.style.display = "block";
 		showcase.innerHTML = "<img class='makeFit' src=" + someImg + "><div id='closeThis' onclick='closeMe()'><img style='width: 40px;' src='icons/exit.png'></div>";
-		overlay.style.display = "block";
+		darkOverlay.style.display = "block";
 	
 	}
 
 	function closeMe(){
 		showcase.style.display = "none";
-		overlay.style.display = "none";
+		darkOverlay.style.display = "none";
 		showcase.innerHTML = "";
 	}
-
-	function headPat(x){
-		alert(x + " recieves 1 headpat!");
-	}
-
-
-
-
-
 
 </script>
 
@@ -717,8 +844,10 @@ window.giveHeadPat = async function(petName) {
 </footer>
 
 <script>
+	/*
 	// prevents the user from right-clicking on the page, not useful - but neat
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
+*/
 </script>
