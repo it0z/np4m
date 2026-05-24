@@ -11,7 +11,14 @@ document.head.appendChild(favLink);
 
 const custCursor = document.createElement('link');
 custCursor.rel = 'stylesheet';
-custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/cool-pink-pointer-glitter-3488f1ab-32.css';
+// custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/rainbow-sheep-c58d4e1a-50.css';
+if(localStorage.getItem("currCursor")){
+  let curse = localStorage.getItem("currCursor");
+  custCursor.href = curse;
+}else{
+  custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/cool-pink-pointer-glitter-3488f1ab-32.css';
+}
+
 document.head.appendChild(custCursor);
 
 let ccn = 0;
@@ -20,13 +27,17 @@ const cursorArray = [
   'https://cdn.cursors-4u.net/cursors/animated/slapping-cat-1348ecde-128.css',
   'https://cdn.cursors-4u.net/cursors/animated/arrow-825426cd-63.css',
   'https://cdn.cursors-4u.net/cursors/animated/cat-paw-curl-f8836eeb-128.css',
-  'https://cdn.cursors-4u.net/cursors/animated/happy-cinnamoroll-eea44ff2-128.css'
+  'https://cdn.cursors-4u.net/cursors/animated/happy-cinnamoroll-eea44ff2-128.css',
+  'https://cdn.cursors-4u.net/cursors/animated/rainbow-sheep-c58d4e1a-50.css'
 ];
 
 function changeCursor(){
   ccn = (ccn + 1) % cursorArray.length;
   custCursor.href = cursorArray[ccn];
   if (!custCursor.isConnected) document.head.appendChild(custCursor);
+  localStorage.setItem("currCursor", String(cursorArray[ccn])); // cursor should now stay current across all pages now.
+  console.log("cursor updated!");
+
 }
 
 document.addEventListener('keydown', (e) => {
