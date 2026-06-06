@@ -1,0 +1,86 @@
+<head>
+<!-- font stuff start -->	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<!-- font stuff end -->	
+<link rel="stylesheet" type="text/css" href="style.css">	
+
+<style>
+body{
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+	font-family: "Dancing Script", cursive;
+	background-image: url(images/milk-bar.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* fills viewport, preserves aspect ratio */
+    /* optional: keep content readable */
+    background-attachment: fixed; /* remove if parallax effect is unwanted on mobile */
+    /* fallback background color while image loads */
+    background-color: #000;
+}
+
+#bottomDiv{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+ font-size: 20px;
+
+}
+#topBar2{
+	position: fixed; 
+	top: 20px;
+	left: 0;
+	height: 40px;
+    font-size: 20px;
+	width: 100%;
+	text-align: center;
+	z-index: 5;
+}
+
+audio {
+  width: 300px;
+  height: 30px;
+  border-radius: 0px;
+  opacity: 0.5;
+}
+
+/* Budweiser - https://www.cursors-4u.com/cursor/budweiser */
+* {
+  cursor: url('https://cdn.cursors-4u.net/previews/budweiser-2a82b6b6-32.webp') 32 32, auto !important;
+}
+/* End www.Cursors-4U.com Code */
+</style>
+
+</head>
+<body onload="testExtF()">
+
+<div id="topBar2">
+	<marquee direction="left">Willkommen to the milkbar! Press play on the jukebox & stay awhile. Click <u><a href="index.html">here</a></u> to return home.</marquee>
+</div>
+
+<center>
+<br><br>
+
+<div id="bottomDiv">
+    
+    <audio controls autoplay loop>
+        <source src="audio/milkbar.mp3" type="audio/mpeg">
+    </audio>
+    <br>
+    Milkbar remix from <u><a href="https://www.youtube.com/@Bulby">Bulby</a></u> on YT
+</div>
+
+<script>
+    function adjustHeight(){
+        alert();
+    }
+</script>
+</center>
+<script src="script.js" defer></script>
+
+</body>
