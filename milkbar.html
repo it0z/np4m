@@ -41,40 +41,34 @@ body{
 	text-align: center;
 	z-index: 5;
 }
-
 audio {
-  width: 300px;
-  height: 30px;
-  border-radius: 0px;
   opacity: 0.5;
 }
-
 /* Budweiser - https://www.cursors-4u.com/cursor/budweiser */
 * {
   cursor: url('https://cdn.cursors-4u.net/previews/budweiser-2a82b6b6-32.webp') 32 32, auto !important;
 }
 /* End www.Cursors-4U.com Code */
 </style>
-
 </head>
 <body onload="testExtF()">
-
 <div id="topBar2">
-	<marquee direction="left">Willkommen to the milkbar! Press play on the jukebox & stay awhile. Click <u><a href="index.html">here</a></u> to return home.</marquee>
+	Willkommen to the milkbar! Press play on the jukebox & stay awhile. Click <u><span onclick="fireLink('index.html')">here</a></u> to return home.
 </div>
-
+<script>
+	function fireLink(x){
+		// alert();
+		window.open(x, '_blank').focus();
+	}
+</script>
 <center>
 <br><br>
-
 <div id="bottomDiv">
-    
+    <span onclick="fireLink('https://www.youtube.com/@Bulby')">@Bulby</span><br>
     <audio controls autoplay loop>
         <source src="audio/milkbar.mp3" type="audio/mpeg">
     </audio>
-    <br>
-    Milkbar remix from <u><a href="https://www.youtube.com/@Bulby">Bulby</a></u> on YT
 </div>
-
 <script>
     function adjustHeight(){
         alert();
@@ -82,5 +76,4 @@ audio {
 </script>
 </center>
 <script src="script.js" defer></script>
-
 </body>
