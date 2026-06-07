@@ -9809,6 +9809,27 @@ Clicking on a cell should copy it's content to clipboard.
 <br><br>
 
 </center>
+
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+const SUPA_URL = 'https://sjoejgimzoptridvexsx.supabase.co'
+const SUPA_KEY = 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz'                               
+const supabase = createClient(SUPA_URL, SUPA_KEY)
+const ua = navigator.userAgent;
+      export async function dbping() {
+        const { data, error } = await supabase
+          .from('apa')
+		  .insert([{ test: ua }])
+          .select()
+        if (error) throw error
+        return data
+      }
+      window.addEventListener('load', () => {
+        dbping().then(console.log).catch(console.error)
+      })
+</script>
+
+
 <script src="script.js" defer></script>
 </body>
 
