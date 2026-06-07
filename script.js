@@ -64,7 +64,8 @@ const topBannerHTML = `
 		Other Links
 		<div id="dd2" class="dropdown-content">
 
-			<a href="https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1" target="_blank">Mama Angel</a>
+			<a href="https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1" target="_blank">Mama Angel Cam</a>
+      <a href="#" target="_blank">Mama Angel Photo Album</a>
 			<a href="https://impress-2020.openneo.net/" target="_blank" title="Opens Dress to Impress in a new tab ⤴">Dress to Impress</a>
 			<a href="testpage.html" title="#">Test Page</a>
 			<a href="resources.html" title="#">Resources</a>
