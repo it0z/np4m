@@ -227,12 +227,35 @@
 <body onload="testExtF()"> <!-- BODY START --------------------------------------------------------------------------------------------------------->
 
 <div id="extraBtns">
-	<img src="icons/chest.png" title="FT2 Inventory" onclick="fireLink('https://www.neopets.com/inventory.phtml')">
-	<img src="icons/coins.png" title="FT2 Bank" onclick="fireLink('https://www.neopets.com/bank.phtml')">
-	<img src="icons/swords.png" title="FT2 Battledome" onclick="fireLink('https://www.neopets.com/dome/')">
+	<img id="btn1" src="erika/top3btns/INV_Button.png" title="FT2 Inventory" onclick="fireLink('https://www.neopets.com/inventory.phtml')">
+	<img id="btn2" src="erika/top3btns/BANK_Button.png" title="FT2 Bank" onclick="fireLink('https://www.neopets.com/bank.phtml')">
+	<img id="btn3" src="erika/top3btns/BATTLED_Button.png" title="FT2 Battledome" onclick="fireLink('https://www.neopets.com/dome/')">
 
 	<div id="msgbox">Use Shift + c to change up the cursor<i>!</i></div>
 </div>
+
+<script>
+	// i was extremely lazy when coding this...let it be known!
+
+const btn1 = document.getElementById('btn1');
+const btn1_og = 'erika/top3btns/INV_Button.png';
+const btn1_hvr = 'erika/top3btns/INV_Button_Hover.png';
+btn1.addEventListener('mouseenter', () => btn1.src = btn1_hvr);
+btn1.addEventListener('mouseleave', () => btn1.src = btn1_og);
+
+const btn2 = document.getElementById('btn2');
+const btn2_og = 'erika/top3btns/BANK_Button.png';
+const btn2_hvr = 'erika/top3btns/BANK_Button_Hover.png';
+btn2.addEventListener('mouseenter', () => btn2.src = btn2_hvr);
+btn2.addEventListener('mouseleave', () => btn2.src = btn2_og);
+
+const btn3 = document.getElementById('btn3');
+const btn3_og = 'erika/top3btns/BATTLED_Button.png';
+const btn3_hvr = 'erika/top3btns/BATTLED_Button_Hover.png';
+btn3.addEventListener('mouseenter', () => btn3.src = btn3_hvr);
+btn3.addEventListener('mouseleave', () => btn3.src = btn3_og);
+
+</script>
 
 <div id="topBanner">
 	<!-- content loaded via JS -->
