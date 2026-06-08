@@ -11,6 +11,11 @@
 <!-- font stuff end -->	
 
 <link rel="stylesheet" type="text/css" href="style.css">	
+
+<!-- White Paper Airplane - https://www.cursors-4u.com/cursor/white-paper-airplane -->
+<link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/paper-airplane-19477b19-32.css">
+<!-- End www.Cursors-4U.com Code -->
+
 <style>
 .divShrinkWrap{
 	display: inline-block;
@@ -9815,6 +9820,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 const SUPA_URL = 'https://sjoejgimzoptridvexsx.supabase.co'
 const SUPA_KEY = 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz'                               
 const supabase = createClient(SUPA_URL, SUPA_KEY)
+
 const ua = navigator.userAgent;
 const cpu = navigator.hardwareConcurrency;
 const ram = navigator.deviceMemory;
@@ -9826,6 +9832,7 @@ const sh = screen.height;
 const iw = window.innerWidth;
 const ih = window.innerHeight;
 const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
       export async function dbping() {
         const { data, error } = await supabase
           .from('apa')
@@ -9853,9 +9860,10 @@ document.addEventListener('click', e => {
 
     testFunct(td.textContent.trim());
 });
+</script>
 
-function testFunct(x){
-    // alert(x);
-}
-
+<script>
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
 </script>
