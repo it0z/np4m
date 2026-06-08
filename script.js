@@ -8,7 +8,6 @@ favLink.rel = 'icon';
 favLink.href = 'icons/redBird.png';
 document.head.appendChild(favLink);
 
-
 const custCursor = document.createElement('link');
 custCursor.rel = 'stylesheet';
 // custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/rainbow-sheep-c58d4e1a-50.css';
@@ -19,6 +18,10 @@ if(localStorage.getItem("currCursor")){
   custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/cool-pink-pointer-glitter-3488f1ab-32.css';
 }
 
+if(window.location.pathname.split('/').pop() == "table1.html"){
+  custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/paper-airplane-19477b19-32.css';
+}
+// alert(window.location.pathname.split('/').pop() );
 document.head.appendChild(custCursor);
 
 let ccn = 0;
