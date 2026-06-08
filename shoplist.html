@@ -41,7 +41,7 @@ table td:first-child {
 }
 
 table td:nth-child(2) {
-  width: 300px;
+  width: 350px;
 }
 
 table td:nth-child(3) {
@@ -445,16 +445,19 @@ Last Updated:
     </tr>
 </table>
 
+
 </center>
 
 <script>
+// IN STOCK, YES, NO
 document.querySelectorAll('table td:nth-child(3)').forEach(td => {
   const t = td.textContent.trim().toLowerCase();
   if (t === 'yes') td.style.backgroundColor = 'green';
   else if (t === 'no') td.style.backgroundColor = 'red';
 });
 
-document.querySelectorAll('table td:nth-child(5)').forEach(td => {
+// FLAG, X
+document.querySelectorAll('table td:nth-child(6)').forEach(td => {
   const t = td.textContent.trim().toLowerCase();
   if (t === 'x') td.style.backgroundColor = 'red';
 });
