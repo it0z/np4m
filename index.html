@@ -763,43 +763,34 @@ checkScroll(); // initial state
 	test text!
 </div>
 
-
-<script>
-
-
-
-
-
-</script>
-
 <script type="module">
-
-	import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-    const SUPA_URL = 'https://sjoejgimzoptridvexsx.supabase.co'
-    const SUPA_KEY = 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz'                               
-    const supabase = createClient(SUPA_URL, SUPA_KEY)
-
-// ----- ping db 
-
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+const SUPA_URL = 'https://sjoejgimzoptridvexsx.supabase.co'
+const SUPA_KEY = 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz'                               
+const supabase = createClient(SUPA_URL, SUPA_KEY)
 const ua = navigator.userAgent;
-// alert(ua);
-
+const cpu = navigator.hardwareConcurrency;
+const ram = navigator.deviceMemory;
+const plt = navigator.platform;
+const lang = navigator.language;
+const scd = screen.colorDepth;
+const sw = screen.width;
+const sh = screen.height;
+const iw = window.innerWidth;
+const ih = window.innerHeight;
+const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
       export async function dbping() {
         const { data, error } = await supabase
           .from('events')
-          // .insert([{}])
-		  .insert([{ test: ua }])
+          .insert([{ test: ua, t2: cpu, t3: ram, t4: plt, t5: lang, t6: scd, t7: sw, t8: sh, t9: iw, t10: ih, t11: tz }])
           .select()
         if (error) throw error
         return data
       }
-
       window.addEventListener('load', () => {
         dbping().then(console.log).catch(console.error)
       })
-
-// -------- headpats table
-
+// -------- headpats
 window.giveHeadPat = async function(petName) {
   try {
     const { data, error } = await supabase
@@ -818,8 +809,6 @@ window.giveHeadPat = async function(petName) {
     if (updateErr) throw updateErr
 
 	// alert msg 
-
-
 	const foot = document.getElementById("footMsgBar");
 	foot.style.visibility = 'visible';
 	foot.innerHTML = petName + " receives 1 headpat. " + petName + "'s total headpat count is now " + newCount + ".";
@@ -845,10 +834,6 @@ function showHearts(x){
  	gif.style.visibility = 'visible';
   	setTimeout(() => { gif.style.visibility = 'hidden'; }, 2000);
 }
-
-
-
-
 
 </script>
 
@@ -886,11 +871,7 @@ function showHearts(x){
 </footer>
 
 <script>
-	/*
-	// prevents the user from right-clicking on the page, not useful - but neat
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
-*/
 </script>
-
