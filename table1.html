@@ -12,10 +12,6 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">	
 
-<!-- White Paper Airplane - https://www.cursors-4u.com/cursor/white-paper-airplane -->
-<link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/paper-airplane-19477b19-32.css">
-<!-- End www.Cursors-4U.com Code -->
-
 <style>
 .divShrinkWrap{
 	display: inline-block;
@@ -73,7 +69,7 @@ td:active{
 </style>
 
 </head>
-<body onload="testExtF()">
+<body>
 
 <div id="topBanner">
 	<!-- content loaded via JS -->
@@ -84,7 +80,18 @@ td:active{
 </div>
 
 
+<div id="toolsDiv">
+
+</div>
+
+
+
 <div id="clock1">clock space</div>
+
+
+
+
+
 <center>
 
 <br><br>
@@ -92,7 +99,8 @@ td:active{
 <br><br>
 
 Tables testing area. Aircraft dataset from ADSB Exchange.<br>
-Clicking on a cell should copy it's content to clipboard.
+Clicking a cell: Hex => adsb, Flag => Wikipedia, Reg => Jetphotos, ACFT Type => Doc8643<br>
+Row count: 1386
 
 <br><br>
 <!-- -------------------------------------------------------------------------------------------------------------->
@@ -9815,6 +9823,8 @@ Clicking on a cell should copy it's content to clipboard.
 
 </center>
 
+
+
 <script type="module">
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 const SUPA_URL = 'https://sjoejgimzoptridvexsx.supabase.co'
@@ -9851,6 +9861,7 @@ const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 </body>
 
 <script>
+/* clipboard code
 document.addEventListener('click', e => {
   const td = e.target.closest('td');
   if (!td) return;
@@ -9860,7 +9871,41 @@ document.addEventListener('click', e => {
 
     testFunct(td.textContent.trim());
 });
+*/
+
+document.addEventListener('click', e => {
+    const td = e.target.closest('td');
+    if (!td) return;
+    
+    const tc = td.textContent.trim();
+    navigator.clipboard.writeText(tc)
+
+    const adsb = "https://globe.adsbexchange.com/?icao=" + tc;
+    const jets = "https://www.jetphotos.com/photo/keyword/" + tc;
+    const doc8 = "https://www.doc8643.com/aircraft/" + tc;
+    const wiki = "https://en.wikipedia.org/wiki/" + tc;
+
+    if(td.cellIndex === 0) { // Hex Code
+        window.open(adsb, 'adsb window').focus();
+    }
+
+    if(td.cellIndex === 1) { // Country
+        window.open(wiki, 'wiki window').focus();
+    }
+
+    if(td.cellIndex === 3) { // Reg Code
+        window.open(jets, 'jetphoto window').focus();
+    }
+
+    if(td.cellIndex === 4) { // ACFT Type
+        window.open(doc8, 'doc8642 window').focus();
+    }
+
+});
+
+
 </script>
+
 
 <script>
 document.addEventListener('contextmenu', function(e) {
