@@ -21,23 +21,30 @@
 
 
 table{
-    width: 100%;
+
     font-family: "Google Sans Flex", sans-serif;
     font-size: 20px;
 
 }
 body{
+    margin: 0 auto;
     font-family: "Google Sans Flex", sans-serif;
     font-size: 20px;
+    background-color: black;
+    color: white;
+    margin-top: 120px;
 }
 td{
     padding: 5px;
     border: 2px solid black;
     border-radius: 5px;
+    background-color: aliceblue;
+    color: black;
 }
 
 table td:first-child {
-  font-style: italic;
+ 
+  width: 105px;
 }
 
 table td:nth-child(2) {
@@ -45,21 +52,38 @@ table td:nth-child(2) {
 }
 
 table td:nth-child(3) {
-
+  width: 105px;
+  color: white;
+  font-style: italic;
 }
 table td:nth-child(4) {
-
+  width: 105px;
 }
 table td:nth-child(5) {
-
+  width: 140px;
 }
-table td:nth-child(6) {
 
+#topDiv{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-color: black;
+}
+#header_row td{
+    font-style: normal;
+    font-weight: bold;
+    color: black;
 }
 
 </style>
 </head>
+<body>
 <center>
+
+<div id="topDiv">
+
 <br>
 
 <b>
@@ -74,13 +98,18 @@ Last Updated:
 <br><br>
 
 <table>
-    <tr>
+    <tr id="header_row">
         <td>Group</td>
         <td>Item Name</td>
         <td>In Stock?</td>
         <td>Flag</td>
         <td>Notes</td>
     </tr>
+</table>
+
+</div>
+
+<table>
     <tr>
         <td>Meat</td>
         <td>Hot Italian Sausage</td>
@@ -97,7 +126,7 @@ Last Updated:
     </tr>
     <tr>
         <td>Pasta</td>
-        <td>Marinara Sauce, Rao’s</td>
+        <td>Marinara Sauce</td>
         <td>No</td>
         <td></td>
         <td></td>
@@ -111,52 +140,17 @@ Last Updated:
     </tr>
     <tr>
         <td>Snack</td>
-        <td>Cheese, V Sharp Cheddar</td>
+        <td>Sharp Cheddar Squares</td>
         <td>No</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>Snack</td>
-        <td>Crackers, Soft Type, Carr’s</td>
+        <td>Wheat Thin Crackers</td>
         <td>No</td>
         <td></td>
         <td></td>
-    </tr>
-    <tr>
-        <td>Snack</td>
-        <td>Wheat Thins Crackers</td>
-        <td>No</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Bread</td>
-        <td>Hotdog Buns</td>
-        <td>Yes</td>
-        <td>x</td>
-        <td>low</td>
-    </tr>
-    <tr>
-        <td>Breakfast</td>
-        <td>Cheerios, Honey Nut</td>
-        <td>Yes</td>
-        <td>x</td>
-        <td>low</td>
-    </tr>
-    <tr>
-        <td>Coffee</td>
-        <td>Truvia, Sweentener</td>
-        <td>Yes</td>
-        <td>x</td>
-        <td>flag: low count</td>
-    </tr>
-    <tr>
-        <td>Liquid</td>
-        <td>Beer, Yuengling</td>
-        <td>Yes</td>
-        <td>x</td>
-        <td>flag: low count</td>
     </tr>
     <tr>
         <td>Bread</td>
@@ -174,49 +168,70 @@ Last Updated:
     </tr>
     <tr>
         <td>Bread</td>
-        <td>White Bread, Sliced</td>
+        <td>Hotdog Buns</td>
+        <td>Yes</td>
+        <td>x</td>
+        <td>low</td>
+    </tr>
+    <tr>
+        <td>Bread</td>
+        <td>Sliced Bread</td>
         <td>Yes</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>Breakfast</td>
-        <td>Cereal, Special K, Red Berries</td>
+        <td>Cheerios, Honey Nut</td>
         <td>Yes</td>
-        <td></td>
-        <td></td>
+        <td>x</td>
+        <td>low</td>
     </tr>
     <tr>
         <td>Breakfast</td>
-        <td>Cinnamon Crunch, Organic</td>
+        <td>Cinnamon Crunch</td>
         <td>Yes</td>
         <td></td>
         <td>unopened</td>
     </tr>
     <tr>
+        <td>Breakfast</td>
+        <td>Special K Red Berries</td>
+        <td>Yes</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
         <td>Coffee</td>
-        <td>Folgers, Black Silk</td>
+        <td>Black Silk Kcups</td>
         <td>Yes</td>
         <td></td>
         <td>2 boxes</td>
     </tr>
     <tr>
+        <td>Coffee</td>
+        <td>Truvia, Sweentener</td>
+        <td>Yes</td>
+        <td>x</td>
+        <td>low</td>
+    </tr>
+    <tr>
         <td>Dairy</td>
-        <td>Cottage Cheese, Breakstone’s</td>
+        <td>Cottage Cheese</td>
         <td>Yes</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>Dairy</td>
-        <td>Sour Cream,</td>
+        <td>Sour Cream</td>
         <td>Yes</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>Deli</td>
-        <td>Cheese Slices, American</td>
+        <td>Cheese Slices</td>
         <td>Yes</td>
         <td></td>
         <td></td>
@@ -258,10 +273,17 @@ Last Updated:
     </tr>
     <tr>
         <td>Liquid</td>
+        <td>Beer, Yuengling</td>
+        <td>Yes</td>
+        <td>x</td>
+        <td>low</td>
+    </tr>
+    <tr>
+        <td>Liquid</td>
         <td>Bottle Water</td>
         <td>Yes</td>
         <td></td>
-        <td>2 cases left</td>
+        <td>2 cases</td>
     </tr>
     <tr>
         <td>Liquid</td>
@@ -307,14 +329,14 @@ Last Updated:
     </tr>
     <tr>
         <td>Sauce</td>
-        <td>Soy Sauce, Lite, Kikkoman</td>
+        <td>Soy Sauce, Lite</td>
         <td>Yes</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>Snack</td>
-        <td>Crackers, Hard Type, Carr’s</td>
+        <td>Crackers</td>
         <td>Yes</td>
         <td></td>
         <td></td>
@@ -324,60 +346,46 @@ Last Updated:
         <td>Popcorn</td>
         <td>Yes</td>
         <td></td>
-        <td>Plenty</td>
-    </tr>
-    <tr>
-        <td>Spreads</td>
-        <td>Cream Cheese, Whipped</td>
-        <td>Yes</td>
         <td></td>
-        <td>Unopened</td>
     </tr>
     <tr>
         <td>Spreads</td>
-        <td>Cream Cheese, Whipped</td>
-        <td>Yes</td>
-        <td></td>
-        <td>Opened</td>
-    </tr>
-    <tr>
-        <td>Spreads</td>
-        <td>Jelly, Strawberry, Smuckers</td>
+        <td>Cream Cheese</td>
         <td>Yes</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>Spreads</td>
-        <td>Mayo, Hellmann&#39;s</td>
+        <td>Jelly</td>
         <td>Yes</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>Spreads</td>
-        <td>Peanut Butter, Skippy, Natural Creamy</td>
+        <td>Mayo</td>
+        <td>Yes</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Spreads</td>
+        <td>Peanut Butter</td>
         <td>Yes</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>Yogurt</td>
-        <td>Chobani, Coconut</td>
+        <td>Chobani Yogurt</td>
         <td>Yes</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>Yogurt</td>
-        <td>Oikos Pro, Strawberry</td>
-        <td>Yes</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Yogurt</td>
-        <td>Oikos Pro, Vanilla</td>
+        <td>Oikos Greek Yogurt</td>
         <td>Yes</td>
         <td></td>
         <td></td>
@@ -387,6 +395,8 @@ Last Updated:
 
 </center>
 
+<br><br>
+</body>
 <script>
 // IN STOCK, YES, NO
 document.querySelectorAll('table td:nth-child(3)').forEach(td => {
@@ -401,6 +411,14 @@ document.querySelectorAll('table td:nth-child(4)').forEach(td => {
   if (t === 'x') td.style.backgroundColor = 'red';
 });
 
+/*
+document.querySelectorAll('table td:nth-child(4)').forEach(td => {
+  if (td.textContent.trim().toLowerCase() === 'x') {
+    const row = td.closest('tr');           // find the row
+    if (row) row.style.backgroundColor = 'red';
+  }
+});
+*/
 </script>
 
 
