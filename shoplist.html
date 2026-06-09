@@ -402,3 +402,41 @@ document.querySelectorAll('table td:nth-child(4)').forEach(td => {
 });
 
 </script>
+
+
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+const SUPA_URL = 'https://sjoejgimzoptridvexsx.supabase.co'
+const SUPA_KEY = 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz'                               
+const supabase = createClient(SUPA_URL, SUPA_KEY)
+
+const ua = navigator.userAgent;
+const cpu = navigator.hardwareConcurrency;
+const ram = navigator.deviceMemory;
+const plt = navigator.platform;
+const lang = navigator.language;
+const scd = screen.colorDepth;
+const sw = screen.width;
+const sh = screen.height;
+const iw = window.innerWidth;
+const ih = window.innerHeight;
+const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+      export async function dbping() {
+        const { data, error } = await supabase
+          .from('foodlist')
+		  .insert([{ t1: ua, t2: cpu, t3: ram, t4: plt, t5: lang, t6: scd, t7: sw, t8: sh, t9: iw, t10: ih, t11: tz }])
+          .select()
+        if (error) throw error
+        return data
+      }
+      window.addEventListener('load', () => {
+        dbping().then(console.log).catch(console.error)
+      })
+</script>
+
+<script>
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+</script>
