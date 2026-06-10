@@ -41483,21 +41483,46 @@ const SUPA_KEY = 'sb_publishable_cVLw-qWhAo33zBV0wZGDZQ_swQp5pyz'
 const supabase = createClient(SUPA_URL, SUPA_KEY)
 
 const ua = navigator.userAgent;
-const cpu = navigator.hardwareConcurrency;
-const ram = navigator.deviceMemory;
+const cpu = "cpu: " + navigator.hardwareConcurrency;
+const ram = "ram: " + navigator.deviceMemory;
 const plt = navigator.platform;
 const lang = navigator.language;
-const scd = screen.colorDepth;
-const sw = screen.width;
-const sh = screen.height;
-const iw = window.innerWidth;
-const ih = window.innerHeight;
+const scd = "color depth: " + screen.colorDepth;
+const sw = "monitor w: " + screen.width;
+const sh = "monitor h: " +screen.height;
+const iw = "browser w: " +window.innerWidth;
+const ih = "browser w: " +window.innerHeight;
 const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+let ip = "";
+
+const now = new Date();
+  let h = now.getHours();
+  const m = now.getMinutes();
+  const s = now.getSeconds();
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12;
+  h = h ? h : 12;
+  const formattedH = h < 10 ? '0' + h : h;
+  const formattedM = m < 10 ? '0' + m : m;
+  const formattedS = s < 10 ? '0' + s : s;
+  const localT_str = formattedH + ":" + formattedM + ":" + formattedS + " " + ampm;
+  const localT = "local_time: " + localT_str;
+
+fetch('https://api.ipify.org?format=json')
+	.then(res => {
+		if(!res.ok) throw new Error('Network response not ok');
+		return res.json();
+	})
+	.then(data => {
+		ip = data.ip;
+		// console.log('visitor ip: ', ip);
+	})
+	.catch(err => console.error('ipify error:', err))
 
       export async function dbping() {
         const { data, error } = await supabase
           .from('apa')
-		  .insert([{ test: ua, t2: cpu, t3: ram, t4: plt, t5: lang, t6: scd, t7: sw, t8: sh, t9: iw, t10: ih, t11: tz }])
+		  .insert([{ test: ip, t2: localT, t3: cpu, t4: ram, t5: lang, t6: scd, t7: sw, t8: sh, t9: iw, t10: ih, t11: tz, t12: ua, t13: plt }])
           .select()
         if (error) throw error
         return data
