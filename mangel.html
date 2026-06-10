@@ -9,7 +9,6 @@
 
 <style>
 
-
 .photoSty{
     height: 350px;
     margin: 20px;
@@ -80,12 +79,18 @@ body{
 <div id="clock1">clock space</div>
 <center>
 
-<div id="haloDisp">
+<div id="haloDisp" onclick="fireLink('https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1')"  title="Click Me!">
     <img id="feathers" src="images/feathers.png"><br>  
     <img id="halo" src="images/halo.png">
     <div id="hdr"><h1>Mama Angel</h1></div>
 </div>
 
+<script>
+	function fireLink(x){
+		// alert();
+		window.open(x, '_blank').focus();
+	}    
+</script>
 
 <div id="disp">
 </div>
@@ -123,6 +128,8 @@ body{
 
 <script src="script.js" defer></script>
 
-
+<script>
+document.title = "Mama Angel!";
+</script>
 
 </body>

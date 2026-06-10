@@ -75,7 +75,7 @@ const topBannerHTML = `
   		</div>
 	</div>
 	<div class="dropdown" onclick="dropdownF('dd2')">
-		Other Links
+		Explore
 		<div id="dd2" class="dropdown-content">
 
 			<a href="https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1" target="_blank">Mama Angel Cam</a>
@@ -97,7 +97,10 @@ const topBannerHTML = `
 			<a href="https://www.neopets.com/halloween/haunted_woods_hunt.phtml" target="_blank">Haunted Woods Hunt</a>
 			<a href="https://www.neopets.com/trudys_surprise.phtml" target="_blank">Trudy's Surprise</a>
 			<a href="https://www.neopets.com/premium/wheel.phtml" target="_blank">The Wheel of Starlight!</a>
-			<a href="https://www.neopets.com/medieval/earthfaerie.phtml" target="_blank">Illusen's Glade</a>		
+			<a href="https://www.neopets.com/medieval/earthfaerie.phtml" target="_blank">Illusen's Glade</a>	
+
+      <a href="https://www.neopets.com/faerieland/darkfaerie.phtml" target="_blank">Jhudora's Bluff</a>
+
 			<a href="https://www.neopets.com/faerieland/employ/employment.phtml" target="_blank">Faerieland Employment Agency</a>		
 			<a href="https://www.neopets.com/games/lottery.phtml" target="_blank">Neopian Lottery</a>    
 
