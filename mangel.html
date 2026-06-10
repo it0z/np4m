@@ -1,0 +1,128 @@
+<head>
+<!-- font stuff start -->	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<!-- font stuff end -->	
+<link rel="stylesheet" type="text/css" href="style.css">	
+
+<style>
+
+
+.photoSty{
+    height: 350px;
+    margin: 20px;
+    filter: brightness(90%);
+}
+.photoSty:hover{
+    rotate: 1deg;
+}
+
+
+
+#haloDisp{
+    display: block;
+    position: relative;
+    margin: 20px;
+
+	width: 310px;
+	height: 310px;
+
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center;
+
+    margin-top: 40px;
+	margin-bottom: 150px;
+}
+#halo{
+    position: absolute;
+    height: 200px;
+    rotate: -11deg;
+
+    z-index: 4;
+    margin-top:-80px;
+}
+#hdr{
+   position: absolute;
+   height: 200px;
+   width: 600px;
+
+}
+
+#feathers{
+    position: absolute;
+    height: 300px;
+
+    margin-top: 200px;
+}
+
+body{
+    font-family: "Lobster Two", sans-serif;
+}
+
+</style>
+
+</head>
+<!------------------------------------------------------------------------------------------------- Body Start-->
+<body>
+
+<div id="topBanner">
+	<!-- content loaded via JS -->
+</div>
+
+<div id="siteLogo">
+	<!-- content loaded via JS -->	
+</div>
+
+
+<div id="clock1">clock space</div>
+<center>
+
+<div id="haloDisp">
+    <img id="feathers" src="images/feathers.png"><br>  
+    <img id="halo" src="images/halo.png">
+    <div id="hdr"><h1>Mama Angel</h1></div>
+</div>
+
+
+<div id="disp">
+</div>
+
+<br><br><br>
+
+</center>
+
+<script>
+    const img_disp = document.getElementById("disp");
+    const photos = [
+        'erika/mama_angel/MAMA_A_PIC_1.png',
+        'erika/mama_angel/MAMA_A_PIC_2.png',
+        'erika/mama_angel/MAMA_A_PIC_3.png',
+        'erika/mama_angel/MAMA_A_PIC_4.png',
+        'erika/mama_angel/MAMA_A_PIC_5.png',
+        'erika/mama_angel/MAMA_A_PIC_6.png',
+        'erika/mama_angel/MAMA_A_PIC_7.png',
+        'erika/mama_angel/MAMA_A_PIC_8.png',
+        'erika/mama_angel/MAMA_A_PIC_9.png',
+        'erika/mama_angel/MAMA_A_PIC_10.png',
+        'erika/mama_angel/MAMA_A_PIC_11.png',
+        'erika/mama_angel/MAMA_A_PIC_12.png',
+        'erika/mama_angel/MAMA_A_PIC_13.png',
+        'erika/mama_angel/MAMA_A_PIC_14.png',
+        'erika/mama_angel/MAMA_A_PIC_15.png',
+        'erika/mama_angel/MAMA_A_PIC_16.png'
+    ];
+
+    for(let i = 0; i < photos.length; i++){
+        img_disp.innerHTML += "<img class='photoSty' src='" + photos[i] + "'>";
+    }
+</script>
+
+
+<script src="script.js" defer></script>
+
+
+
+</body>

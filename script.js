@@ -22,6 +22,17 @@ if(window.location.pathname.split('/').pop() == "table1.html"){
   custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/paper-airplane-19477b19-32.css';
 }
 // alert(window.location.pathname.split('/').pop() );
+
+if(window.location.pathname.split('/').pop() == "mangel.html"){
+  custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/neopets-baby-pteri-010d6889-40.css';
+}
+
+if(window.location.pathname.split('/').pop() == "food.html"){
+  custCursor.href = 'https://cdn.cursors-4u.net/cursors/animated/happy-apple-52507de0-32.css';
+}
+
+
+
 document.head.appendChild(custCursor);
 
 let ccn = 0;
@@ -68,12 +79,14 @@ const topBannerHTML = `
 		<div id="dd2" class="dropdown-content">
 
 			<a href="https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1" target="_blank">Mama Angel Cam</a>
-      <a href="#" target="_blank">Mama Angel Photo Album</a>
-			<a href="https://impress-2020.openneo.net/" target="_blank" title="Opens Dress to Impress in a new tab ⤴">Dress to Impress</a>
-			<a href="testpage.html" title="#">Test Page</a>
-			<a href="resources.html" title="#">Resources</a>
-			<a href="bd.html" title="#">BD Corner</a>
-			<a href="stones.html" title="#">Codestone Tool</a>
+      <a href="mangel.html">Mama Angel Photos</a>
+			
+      <a href="food.html">Chef's Corner</a> 
+
+			<a href="resources.html">Online Resources</a>
+			<a href="bd.html">BD Corner</a>
+      <a href="https://impress-2020.openneo.net/" target="_blank" title="Opens Dress to Impress in a new tab ⤴">Dress to Impress</a>
+			
 
   		</div>
 	</div>
@@ -94,8 +107,8 @@ const topBannerHTML = `
 		Testing Area
 		<div id="dd4" class="dropdown-content">
 
-			<a href="db.html">Leave a Comment</a> 
-			<a href="food.html">Food Archive</a>      
+			<a href="db.html">Message Board</a> 
+			<a href="stones.html">Codestone Tool</a>
 
   		</div>
 	</div>

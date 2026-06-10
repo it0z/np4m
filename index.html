@@ -1,4 +1,4 @@
-<head>
+﻿<head>
 <!-- font stuff start -->	
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -6,13 +6,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <!-- font stuff end -->		
 <style>
 .divShrinkWrap{
 	display: inline-block;
 	position: relative; /* parent to nameBanner class */
-	margin: 20px;
-	margin-bottom: 70px;
+	margin: 30px;
+	margin-bottom: 100px;
 	background-color: #000;
 	padding: 1px;
 	border-top-right-radius: 20px;
@@ -56,9 +57,9 @@
 
 .nameBanner{
 	position: absolute; 
-	top: -35px;
+	top: -30px;
 	left: 0;
-	height: 30px;
+	height: 33px;
 	width: 100%;
 	color: #FFF;
 	font-weight: bold;
@@ -68,7 +69,9 @@
 	border-bottom-right-radius: 20px;
 	display: flex;
     align-items: center; /* Vertically centers the content */
-    justify-content: center;
+    justify-content: left;
+	margin-left:10px;
+
 }
 .customizeBtn img{
 	height: 25px;
@@ -138,27 +141,32 @@
 /* topbanner nav-bar height is 40px */
 #extraBtns{
 	position: fixed;
-	top: 55px;
-	right: 0;
+
+	top: 60px;
+	
+	
 	width: 120px;
 	height: 40px;
+
 	display: flex;
     align-items: center; /* Vertically centers the content */
     justify-content: center;
+
 	border: none;
 	z-index: 5;
 
 	width: 100%;
+	
 }
 
 #extraBtns img{
 	display: inline-block; /* or block if stacked */
-	height: 30px;
+	height: 35px;
 	margin-left: 4px;
 }
 
 #extraBtns img:hover{
-	margin-bottom: 4px;
+	margin-bottom: 2px;
 }
 
 #extraBtns {
@@ -209,6 +217,10 @@
   font-size: 20px;
 	border-top: 5px solid #333;
   visibility: hidden;
+}
+
+#petsDiv{
+	margin-top: 150px;
 }
 
 </style>
@@ -294,8 +306,10 @@ checkScroll(); // initial state
 
 
 <br>
-<h1>lilkeeree’s pets</h1>
+<h1></h1>
 <br>
+
+<div id="petsDiv">
 
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/Ardeillia/1/7.png')" src="https://pets.neopets.com/cpn/Ardeillia/1/4.png" title="Ardeillia">
@@ -494,8 +508,7 @@ checkScroll(); // initial state
 </div>
 
 <!-- My Pets -------------------------------------------------------------------------------------------------------------------------------------------------->
-<h1>modoru’s pets</h1>
-<br>
+
 <div class="divShrinkWrap">	
 	<img class="petImgcss" onclick="dispThis('https://pets.neopets.com/cpn/abyssik/1/7.png')" src="https://pets.neopets.com/cpn/abyssik/1/4.png" title="Abyssik">
 	<div class="nameBanner">Abyssik</div>
@@ -756,6 +769,8 @@ checkScroll(); // initial state
 	</div>
 	<img id="Zotomxi_hearts" class="heart_overlay" src="gifs/hearts.gif">
 </div>
+
+</div><!-- End of petsDiv -->
 
 </center>
 
