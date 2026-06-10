@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <!-- font stuff end -->		
 <!-- font stuff end -->	
 <link rel="stylesheet" type="text/css" href="style.css">	
@@ -16,7 +17,7 @@ body{
 	margin: 0 auto;
 	background-color: black;
 	color: white;
-	font-family: "Dancing Script", cursive;
+
 	background-image: url(images/milk-bar.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -25,7 +26,7 @@ body{
     background-attachment: fixed; /* remove if parallax effect is unwanted on mobile */
     /* fallback background color while image loads */
     background-color: #000;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Lobster Two", sans-serif;
 }
 
 #bottomDiv{
@@ -46,10 +47,11 @@ body{
 	width: 100%;
 	text-align: center;
 	z-index: 5;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Lobster Two", sans-serif;
 }
 audio {
   opacity: 0.5;
+  display: none;
 }
 /* Budweiser - https://www.cursors-4u.com/cursor/budweiser */
 * {
@@ -58,7 +60,7 @@ audio {
 /* End www.Cursors-4U.com Code */
 </style>
 </head>
-<body onload="testExtF()">
+<body>
 <div id="topBar2">
 	Willkommen to the milkbar! Press play on the jukebox & stay awhile. Click <u><span onclick="fireLink('index.html')">here</a></u> to return home.
 </div>
@@ -71,7 +73,7 @@ audio {
 <center>
 <br><br>
 <div id="bottomDiv">
-    <span onclick="fireLink('https://www.youtube.com/@Bulby')">@Bulby</span><br>
+
     <audio controls autoplay loop>
         <source src="audio/milkbar.mp3" type="audio/mpeg">
     </audio>
@@ -84,3 +86,7 @@ audio {
 </center>
 <script src="script.js" defer></script>
 </body>
+
+<script>
+document.title = "Milk!";
+</script>
