@@ -72,6 +72,8 @@
     justify-content: left;
 	margin-left:10px;
 
+	font-family: "Pixelify Sans", sans-serif;
+	font-size: 20px;
 }
 .customizeBtn img{
 	height: 25px;
@@ -153,7 +155,7 @@
     justify-content: center;
 
 	border: none;
-	z-index: 5;
+	z-index: 4;
 
 	width: 100%;
 	
@@ -223,6 +225,34 @@
 	margin-top: 150px;
 }
 
+#sideMenu{
+	position: fixed;
+	top: 40px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+
+	z-index: 5;
+}
+
+#sideTray { 
+	position: fixed;  
+	top: 50px; 
+	left: -400px;
+	width: 200px; 
+	height: 200px;
+	border: 1px solid purple;
+	z-index: 5;
+	background-color: black;
+	padding: 5px;
+}
+
+
+
+
+
+
+
 </style>
 
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -232,6 +262,81 @@
 </head>
 
 <body> <!-- BODY START --------------------------------------------------------------------------------------------------------->
+
+
+<div id="sideMenu"></div>
+
+<div id="sideTray">
+<center>
+Secret Settings Panel
+<br><br>
+Change Font Style:
+<br>
+<select id="fontSel" onchange="fontChange(this.value)">
+	<option value="d">Default</option>
+	<option value="f1">Dancing</option>
+	<option value="f2">Pixel</option>
+	<option value="f3">Caveat</option>
+</select>
+<br>
+Change Name Size:
+<br>
+<input type="range" min="1" max="100" value="30" onchange="nameFS(this.value)">
+
+</center>
+</div>
+
+<script>
+
+function nameFS(x2){
+	const elems = document.getElementsByClassName("nameBanner");
+	const sizePx = x2 + "px";
+	for (let i = 0; i < elems.length; i++) {
+		elems[i].style.fontSize = sizePx;
+	}
+}
+
+
+
+const curFont = "";
+
+function fontChange(x){
+	if(x == 'f1'){
+		document.body.style.fontFamily = '"Dancing Script", cursive';
+	}
+	if(x == 'f2'){
+		document.body.style.fontFamily = '"Pixelify Sans", sans-serif';
+	}
+	if(x == 'f3'){
+		document.body.style.fontFamily = '"Caveat", cursive';
+	}
+	if(x == 'd'){
+		document.body.style.fontFamily = '"Lobster Two", sans-serif';
+	}
+	
+}
+
+const menu = document.getElementById("sideMenu");
+const tray = document.getElementById("sideTray");
+
+
+function show() {
+	tray.style.left = "10px";
+}
+function hide() {
+	tray.style.left = "-400px";
+}
+
+menu.addEventListener('mouseenter', show);
+menu.addEventListener('mouseleave', hide);
+
+tray.addEventListener('mouseenter', show);
+tray.addEventListener('mouseleave', hide);
+
+
+
+</script>
+
 
 <div id="extraBtns">
 	<img id="btn1" src="erika/top3btns/INV_Button.png" onclick="fireLink('https://www.neopets.com/inventory.phtml')">
@@ -263,6 +368,8 @@ btn3.addEventListener('mouseenter', () => btn3.src = btn3_hvr);
 btn3.addEventListener('mouseleave', () => btn3.src = btn3_og);
 
 </script>
+
+
 
 <div id="topBanner">
 	<!-- content loaded via JS -->
@@ -311,6 +418,10 @@ checkScroll(); // initial state
 <br>
 <h1></h1>
 <br>
+
+
+
+
 
 <div id="petsDiv">
 
