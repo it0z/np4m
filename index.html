@@ -282,9 +282,12 @@ btn3.addEventListener('mouseleave', () => btn3.src = btn3_og);
 <br><br>
 
 <script>
-	function fireLink(x){
-		// alert();
-		window.open(x, '_blank').focus();
+	function fireLink(x, y){ // set the 2nd arg to 'new' to have the tgt open in a new tab!
+		if(y === "new"){
+			window.open(x, '_blank').focus(); // focus was the problem. never forget.
+		}else{
+			window.open(x, '_self');
+		}
 	}
 
 
@@ -910,8 +913,10 @@ function showHearts(x){
 	<br><br>
 	<img onclick="fireLink('milkbar.html')" src="icons/milk.png">
 	<img onclick="fireLink('table1.html')" src="icons/plane.png" style="height: 35px;">
+	<img onclick="fireLink('https://gasprices.aaa.com/', 'new')" src="icons/gasCan.png" style="height: 35px;">
 	<br>
 
+<!-- <a href="https://www.flaticon.com/free-icons/gas-can" title="gas can icons">Gas can icons created by Umeicon - Flaticon</a> -->
 
 </footer>
 
