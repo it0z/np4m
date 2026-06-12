@@ -263,6 +263,9 @@
 
 <body> <!-- BODY START --------------------------------------------------------------------------------------------------------->
 
+<audio id="bg" controls hidden loop>
+  <source src="audio/milkbar.mp3" type="audio/mpeg">
+</audio>
 
 <div id="sideMenu"></div>
 
@@ -286,6 +289,69 @@ Change Name Size:
 </center>
 </div>
 
+
+
+<script>
+// created 11 June 2026
+const audio = document.getElementById('bg');
+const cc2 = document.createElement('link');
+let spell = '';
+let fireon = false;
+
+
+document.addEventListener('keyup', e => {
+    const k = e.key;
+    spell += k;
+    document.title = spell;
+
+    if(spell.includes("fire")){
+		if(fireon == false){
+			cc2.rel = 'stylesheet';
+        	cc2.href = 'https://cdn.cursors-4u.net/cursors/animated/flaming-sword-minecraft-404d04d4-128.css';
+        	document.head.appendChild(cc2);
+			fireon = true;
+		}else{
+  			cc2.href = localStorage.getItem("currCursor");
+			document.head.appendChild(custCursor);
+			fireon = false;
+		}
+        spell = "";
+		document.title = "Homepage!";
+    }
+
+    if(spell.includes("dark")){
+        document.body.style.background = "black";
+        spell = "";
+		document.title = "Homepage!";
+    }
+
+    if(spell.includes("cam")){
+        window.open('https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1', '_blank').focus();
+        spell = "";
+		document.title = "Homepage!";
+    }
+
+	if(spell.includes("milk")){
+        if(audio.paused > 0){
+            audio.play();
+        }else{
+            audio.pause();
+        }
+		spell = "";
+        document.title = "Homepage!";
+    }
+
+    if(spell.includes("Backspace") || spell.includes("Enter") || spell.includes("Shift") || spell.includes("C")) { // clear spell
+        spell = "";
+		document.title = "Homepage!";
+    }
+    
+
+});
+</script>
+
+
+
 <script>
 
 function nameFS(x2){
@@ -295,8 +361,6 @@ function nameFS(x2){
 		elems[i].style.fontSize = sizePx;
 	}
 }
-
-
 
 const curFont = "";
 
@@ -1040,3 +1104,4 @@ document.addEventListener('contextmenu', function(e) {
 <script>
 document.title = "Homepage!";
 </script>
+

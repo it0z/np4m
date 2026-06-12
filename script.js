@@ -56,7 +56,7 @@ function changeCursor(){
 
 document.addEventListener('keydown', (e) => {
   if (e.shiftKey && e.key.toLowerCase() === 'c') {
-    if (['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+    
     changeCursor();
   }
 });
