@@ -78,7 +78,7 @@ const topBannerHTML = `
 		Explore
 		<div id="dd2" class="dropdown-content">
 
-			<a href="https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1" target="_blank">Mama Angel Cam</a>
+			<a href="tv.html" target="_self">Mama Angel TV</a>
       <a href="mangel.html">Mama Angel Photos</a>
 			
       <a href="food.html">Chef's Corner</a> 

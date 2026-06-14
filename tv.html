@@ -13,11 +13,18 @@ body{
 }
 
 .ytFrames{
-    border: 2px solid black; 
+    border: 2px solid green; 
     border-radius: 20px;
     width: 440px;
     height: 300px;
     margin: 10px;
+}
+#mamaCam{
+    border: 2px solid green;
+    border-radius: 20px;
+    width: 900px;
+    height: 600px;
+    margin-bottom: 30px;
 }
 </style>
 </head>
@@ -33,6 +40,9 @@ body{
 <center>
 <br><br>
 <h1 id="main_header">Mama Angel TV</h1>
+
+<iframe id="mamaCam" src="https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1" allowfullscreen></iframe>
+<br><br>
 <div id="disp">
 </div>
 </center>
@@ -43,9 +53,6 @@ const videoUrls = [
     'PHw2bBe_9Uc','kElp5V0YIB0','eP2DRJbRJOo',
     '82iSNr5F5G0','NJGlcYuZJ8s','0kovJlDnzY4',
     '6k15Cup4vaM'
-
-
-
 ];
 const container = document.getElementById("disp");
 videoUrls.forEach((url, i) => {
@@ -61,6 +68,6 @@ videoUrls.forEach((url, i) => {
 </script>
 <script src="script.js" defer></script>
 <script>
-document.title = "TV";
+document.title = "Mama Angel TV";
 </script>
 </body>
