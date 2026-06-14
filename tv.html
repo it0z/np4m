@@ -5,73 +5,60 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <!-- font stuff end -->	
-<link rel="stylesheet" type="text/css" href="style.css">	
-
+<link rel="stylesheet" type="text/css" href="style.css">
 <style>
-
 body{
     font-family: "Lobster Two", sans-serif;
     margin: 0 auto;
 }
 
 .ytFrames{
-    border: 2px solid red; 
-    width: 400px;
-    height: 250px;
+    border: 2px solid black; 
+    border-radius: 20px;
+    width: 440px;
+    height: 300px;
+    margin: 10px;
 }
 </style>
-
 </head>
 <!------------------------------------------------------------------------------------------------- Body Start-->
 <body>
-
 <div id="topBanner">
 	<!-- content loaded via JS -->
 </div>
-
 <div id="siteLogo">
 	<!-- content loaded via JS -->	
 </div>
-
-
 <div id="clock1">clock space</div>
 <center>
-
 <br><br>
-
-<h1 id="main_header">TV</h1>
-
+<h1 id="main_header">Mama Angel TV</h1>
 <div id="disp">
-
-<iframe class="ytFrames"
-
-src="https://www.youtube.com/embed/XEhTWm4nSbQ" 
-title="YouTube video player" 
-frameborder="0" 
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-referrerpolicy="strict-origin-when-cross-origin"
-allowfullscreen>
-</iframe>
-
-
 </div>
-
-
-
 </center>
-
-
-
-
-
-
-
-
-
+<script>
+const videoUrls = [
+    'https://www.youtube.com/embed/fsYovsqTstI',
+    'https://www.youtube.com/embed/8Er9Ar1enyw',
+    'https://www.youtube.com/embed/NdvOH7vcmEA',
+    'https://www.youtube.com/embed/pNQiRDM35TM',
+    'https://www.youtube.com/embed/35vQH-LQzrU',
+    'https://www.youtube.com/embed/k39MIbjI78U',
+    'https://www.youtube.com/embed/PHw2bBe_9Uc'
+];
+const container = document.getElementById("disp");
+videoUrls.forEach((url, i) => {
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.classList.add('ytFrames');     
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerpolicy = "strict-origin-when-cross-origin";
+    iframe.allowfullscreen = true;
+    container.appendChild(iframe);
+});
+</script>
 <script src="script.js" defer></script>
-
 <script>
 document.title = "TV";
 </script>
-
 </body>
