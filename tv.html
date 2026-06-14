@@ -38,18 +38,19 @@ body{
 </center>
 <script>
 const videoUrls = [
-    'https://www.youtube.com/embed/fsYovsqTstI',
-    'https://www.youtube.com/embed/8Er9Ar1enyw',
-    'https://www.youtube.com/embed/NdvOH7vcmEA',
-    'https://www.youtube.com/embed/pNQiRDM35TM',
-    'https://www.youtube.com/embed/35vQH-LQzrU',
-    'https://www.youtube.com/embed/k39MIbjI78U',
-    'https://www.youtube.com/embed/PHw2bBe_9Uc'
+    'fsYovsqTstI','8Er9Ar1enyw','NdvOH7vcmEA',
+    'pNQiRDM35TM','35vQH-LQzrU','k39MIbjI78U',
+    'PHw2bBe_9Uc','kElp5V0YIB0','eP2DRJbRJOo',
+    '82iSNr5F5G0','NJGlcYuZJ8s','0kovJlDnzY4',
+    '6k15Cup4vaM'
+
+
+
 ];
 const container = document.getElementById("disp");
 videoUrls.forEach((url, i) => {
     const iframe = document.createElement('iframe');
-    iframe.src = url;
+    iframe.src = 'https://www.youtube.com/embed/' + url;
     iframe.classList.add('ytFrames');   
     iframe.loading = 'lazy';  
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen";
