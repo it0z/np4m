@@ -50,8 +50,9 @@ const container = document.getElementById("disp");
 videoUrls.forEach((url, i) => {
     const iframe = document.createElement('iframe');
     iframe.src = url;
-    iframe.classList.add('ytFrames');     
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.classList.add('ytFrames');   
+    iframe.loading = 'lazy';  
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen";
     iframe.referrerpolicy = "strict-origin-when-cross-origin";
     iframe.allowfullscreen = true;
     container.appendChild(iframe);
