@@ -247,10 +247,15 @@
 	padding: 5px;
 }
 
+.voidBtns{
+	height: 35px;
+}
 
 
-
-
+.voidBtns:hover{
+    rotate: 5deg;
+	opacity: 0.8;
+}
 
 
 </style>
@@ -292,6 +297,7 @@ Change Name Size:
 
 
 <script>
+// SPELLS AREA
 // created 11 June 2026
 const audio = document.getElementById('bg');
 const cc2 = document.createElement('link');
@@ -1086,11 +1092,14 @@ function showHearts(x){
 <br>
 	the void.
 	<br><br>
-	<img onclick="fireLink('milkbar.html', 'new')" src="icons/milk.png">
-	<img onclick="fireLink('table1.html', 'new')" src="icons/plane.png" style="height: 35px;">
-	<img onclick="fireLink('https://gasprices.aaa.com/', 'new')" src="icons/gasCan.png" style="height: 35px;">
-	<img onclick="fireLink('tv.html', 'new')" src="icons/tv.png" style="height: 35px;">
-	<img onclick="fireLink('https://www.pizzint.watch/', 'new')" src="icons/pizza.png" style="height: 35px;">
+	<img class="voidBtns" onclick="fireLink('milkbar.html', 'new')" src="icons/milk.png">
+	<img class="voidBtns" onclick="fireLink('table1.html', 'new')" src="icons/plane.png">
+	<img class="voidBtns" onclick="fireLink('https://gasprices.aaa.com/', 'new')" src="icons/gasCan.png">
+	<img class="voidBtns" onclick="fireLink('tv.html', 'new')" src="icons/tv.png">
+	<img class="voidBtns" onclick="fireLink('https://www.pizzint.watch/', 'new')" src="icons/pizza.png">
+	<img class="voidBtns" onclick="fireLink('https://outagemap.rienergy.com/omap', 'new')" src="icons/bolt.png">
+	<img class="voidBtns" onclick="fireLink('https://www.openmhz.com/system/risconn', 'new')" src="icons/radio.png">
+
 
 	<br>
 

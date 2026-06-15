@@ -75,4 +75,31 @@ videoUrls.forEach((url, i) => {
 <script>
 document.title = "Mama Angel TV";
 </script>
+
+<script>
+// ----------------------------------------------------------- SPELLS AREA
+const audio = document.getElementById('bg');
+const cc2 = document.createElement('link');
+let spell = '';
+let fireon = false;
+
+document.addEventListener('keyup', e => {
+    const k = e.key;
+    spell += k;
+    document.title = spell;
+
+    if(spell.includes("dark")){
+        document.body.style.background = "black";
+        spell = "";
+		document.title = "Homepage!";
+    }
+
+    if(spell.includes("Backspace") || spell.includes("Enter") || spell.includes("Shift") || spell.includes("C")) { // clear spell
+        spell = "";
+		document.title = "Homepage!";
+    }
+    
+});
+</script>
+
 </body>
