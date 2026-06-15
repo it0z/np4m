@@ -26,6 +26,21 @@ body{
     height: 600px;
     margin-bottom: 30px;
 }
+
+#mapDiv{
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    height: 100px;
+    width: 100px;
+
+	display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center;
+}
+#mapDiv img{
+    height: 50px;
+}
 </style>
 </head>
 <!------------------------------------------------------------------------------------------------- Body Start-->
@@ -40,6 +55,21 @@ body{
 <center>
 <br><br>
 <h1 id="main_header">Mama Angel TV</h1>
+
+
+<div id="mapDiv">
+    <img src="icons/map.png" title="View Nest on Google Maps" onclick="fireLink('https://www.google.com/maps?q=41.454572,-71.453814&z=17&t=k', 'new')">
+</div>
+
+<script>
+	function fireLink(x, y){ // set the 2nd arg to 'new' to have the tgt open in a new tab!
+		if(y === "new"){
+			window.open(x, '_blank').focus(); // focus was the problem. never forget.
+		}else{
+			window.open(x, '_self');
+		}
+	}
+</script>
 
 <iframe id="mamaCam" src="https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1" allowfullscreen></iframe>
 <br><br>
