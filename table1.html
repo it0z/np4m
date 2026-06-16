@@ -98084,19 +98084,19 @@ document.addEventListener('click', e => {
     const doc8 = "https://www.doc8643.com/aircraft/" + tc;
     const wiki = "https://en.wikipedia.org/wiki/" + tc;
 
-    if(td.cellIndex === 1) { // Hex Code
+    if(td.cellIndex === 0) { // Hex Code
         window.open(adsb, 'adsb window').focus();
     }
 
-    if(td.cellIndex === 2) { // Country
+    if(td.cellIndex === 1) { // Country
         window.open(wiki, 'wiki window').focus();
     }
 
-    if(td.cellIndex === 4) { // Reg Code
+    if(td.cellIndex === 3) { // Reg Code
         window.open(jets, 'jetphoto window').focus();
     }
 
-    if(td.cellIndex === 5) { // ACFT Type
+    if(td.cellIndex === 4) { // ACFT Type
         window.open(doc8, 'doc8642 window').focus();
     }
 
