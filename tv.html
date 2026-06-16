@@ -124,6 +124,12 @@ document.addEventListener('keyup', e => {
 		document.title = "Homepage!";
     }
 
+    if(spell.includes("light")){
+        document.body.style.background = "white";
+        spell = "";
+		document.title = "Homepage!";
+    }
+
     if(spell.includes("Backspace") || spell.includes("Enter") || spell.includes("Shift") || spell.includes("C")) { // clear spell
         spell = "";
 		document.title = "Homepage!";
